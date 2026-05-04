@@ -39,13 +39,18 @@
       }
 
       .header {
+        padding: 22px clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 18px;
-        padding: 22px clamp(18px, 5vw, 64px);
-        background: #fff;
-        border-bottom: 1px solid var(--line);
       }
 
       .logo {
@@ -68,11 +73,118 @@
 
       .hero {
         min-height: calc(100vh - 78px);
+        width: min(1080px, calc(100% - 40px));
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: minmax(320px, 1fr) minmax(320px, 430px);
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
         align-items: center;
-        gap: clamp(26px, 5vw, 74px);
-        padding: clamp(38px, 7vw, 88px) clamp(18px, 5vw, 72px);
+        gap: clamp(28px, 5vw, 54px);
+        padding: 56px 0;
+      }
+
+      .hero-mini-visual {
+        width: min(100%, 360px);
+        display: grid;
+        gap: 10px;
+        margin-bottom: 24px;
+        border: 1px solid #cbe6d7;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 12px 30px rgba(23, 32, 27, 0.08);
+        padding: 12px;
+      }
+
+      .mini-message-top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .mini-avatar {
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--green);
+        color: white;
+        font-weight: 900;
+        font-size: 13px;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .hero-mini-visual strong,
+      .hero-mini-visual span {
+        display: inline-flex;
+      }
+
+      .hero-mini-visual .mini-avatar {
+        display: inline-grid;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .hero-mini-visual div,
+      .mini-thread {
+        min-width: 0;
+      }
+
+      .mini-message-top div {
+        display: grid;
+        gap: 1px;
+      }
+
+      .mini-message-top div > span {
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .mini-thread {
+        display: grid;
+        gap: 7px;
+      }
+
+      .mini-bubble,
+      .typing-dots {
+        width: fit-content;
+        max-width: 90%;
+        border-radius: 16px;
+        padding: 8px 10px;
+        font-size: 13px;
+        line-height: 1.28;
+      }
+
+      .mini-bubble.coach,
+      .typing-dots {
+        justify-self: start;
+        background: #e8f4ee;
+        color: var(--ink);
+      }
+
+      .mini-bubble.user {
+        justify-self: end;
+        background: var(--ink);
+        color: white;
+      }
+
+      .typing-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        min-width: 46px;
+        min-height: 30px;
+      }
+
+      .typing-dots span {
+        width: 6px;
+        height: 6px;
+        display: block;
+        border-radius: 999px;
+        background: var(--green);
       }
 
       .eyebrow {
@@ -84,14 +196,14 @@
       }
 
       h1 {
-        max-width: 760px;
+        max-width: 620px;
         margin: 0;
-        font-size: clamp(44px, 7vw, 84px);
-        line-height: 0.96;
+        font-size: 68px;
+        line-height: 0.98;
       }
 
       .lede {
-        max-width: 620px;
+        max-width: 560px;
         margin: 22px 0 0;
         color: var(--muted);
         font-size: 20px;
@@ -171,6 +283,71 @@
         box-shadow: 0 0 0 3px rgba(2, 188, 66, 0.12);
       }
 
+      .phone-field {
+        min-height: 42px;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: white;
+        overflow: hidden;
+      }
+
+      .phone-field:focus-within {
+        border-color: var(--green);
+        box-shadow: 0 0 0 3px rgba(2, 188, 66, 0.12);
+      }
+
+      .phone-field input {
+        min-height: 40px;
+        border: 0;
+        border-radius: 0;
+        padding-left: 10px;
+      }
+
+      .phone-field input:focus {
+        border-color: transparent;
+        box-shadow: none;
+      }
+
+      .phone-prefix {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-right: 1px solid var(--line);
+        padding: 0 10px;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .us-flag {
+        position: relative;
+        width: 25px;
+        height: 16px;
+        display: inline-block;
+        border: 1px solid #d7dde0;
+        border-radius: 2px;
+        background: repeating-linear-gradient(
+          to bottom,
+          #b22234 0 1.23px,
+          #ffffff 1.23px 2.46px
+        );
+        box-shadow: 0 1px 1px rgba(23, 32, 27, 0.08);
+      }
+
+      .us-flag::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 11px;
+        height: 8.8px;
+        background: #3c3b6e;
+      }
+
       .checkbox {
         grid-template-columns: 18px minmax(0, 1fr);
         align-items: start;
@@ -214,14 +391,21 @@
         border-top: 1px solid var(--line);
       }
 
-      @media (max-width: 800px) {
-        .header,
+      @media (max-width: 1180px) {
         .hero {
+          width: min(940px, calc(100% - 40px));
+        }
+      }
+
+      @media (max-width: 800px) {
+        .header-inner {
           display: grid;
         }
 
         .hero {
+          width: min(100% - 32px, 520px);
           grid-template-columns: 1fr;
+          padding: 36px 0 48px;
         }
 
         h1 {
@@ -232,32 +416,52 @@
   </head>
   <body>
     <header class="header">
-      <a class="logo" href="/" aria-label="Fit Txt home">
-        <svg
-          version="1.0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="120"
-          height="52"
-          viewBox="0 0 300 129"
-          preserveAspectRatio="xMidYMid meet"
-          aria-hidden="true"
-        >
-          <g transform="translate(0,129) scale(0.1,-0.1)" fill="#000000" stroke="none">
-            <path d="M1975 1283 c-197 -23 -281 -42 -415 -94 -154 -59 -298 -176 -351 -286 -17 -34 -25 -70 -27 -126 -4 -74 -2 -83 32 -152 81 -165 297 -295 578 -350 l87 -17 -19 -49 c-26 -64 -64 -125 -109 -172 l-36 -38 30 6 c128 28 237 91 360 205 38 35 45 38 121 43 336 24 639 179 737 376 26 54 31 76 31 136 0 161 -119 303 -341 407 -177 83 -488 134 -678 111z m-162 -293 c6 -22 5 -45 -2 -62 -10 -27 -13 -28 -80 -28 l-69 0 -6 -187 c-4 -104 -10 -204 -14 -223 -7 -34 -9 -35 -57 -38 -79 -4 -77 -8 -66 179 6 90 11 185 11 212 l0 47 -65 0 c-53 0 -66 3 -75 19 -14 28 -13 86 3 99 12 11 181 19 347 18 l65 -1 8 -35z m252 -30 c19 -38 39 -70 43 -70 4 0 24 30 46 65 33 56 42 65 67 65 17 0 41 -11 59 -27 l30 -28 -65 -94 c-36 -52 -65 -98 -65 -103 0 -5 32 -63 71 -130 53 -91 69 -126 62 -138 -14 -21 -73 -60 -92 -60 -10 0 -36 37 -69 95 -29 52 -56 95 -61 95 -4 0 -29 -39 -56 -86 -26 -47 -54 -88 -62 -91 -23 -9 -82 24 -95 52 -10 23 -4 35 67 142 l78 117 -52 97 c-28 53 -51 104 -51 113 0 20 56 56 87 56 18 0 30 -15 58 -70z m749 54 c8 -20 8 -62 0 -91 -6 -21 -12 -23 -75 -23 l-68 0 -5 -32 c-3 -18 -8 -116 -12 -218 -4 -121 -10 -188 -18 -192 -14 -10 -98 -10 -112 0 -10 7 -5 181 10 370 l5 62 -68 0 c-63 0 -69 2 -79 25 -15 34 -15 67 1 88 10 14 35 17 152 20 77 1 168 4 201 5 49 2 63 -1 68 -14z" style="fill:#02bc42"/>
-            <path d="M136 1011 c-65 -4 -91 -10 -97 -21 -8 -15 -41 -532 -34 -538 10 -11 85 -13 104 -3 18 10 21 21 21 70 0 32 3 79 6 104 l6 45 100 4 c110 3 120 9 116 68 l-3 35 -102 3 -103 3 0 58 0 58 128 9 127 9 3 53 3 52 -93 -2 c-51 -1 -133 -4 -182 -7z"/>
-            <path d="M516 978 c-15 -110 -47 -502 -42 -514 6 -15 111 -20 120 -6 2 4 14 129 26 276 25 302 28 286 -52 286 l-47 0 -5 -42z"/>
-            <path d="M836 1010 c-117 -5 -120 -6 -126 -30 -4 -14 -3 -40 2 -57 l9 -33 70 0 71 0 -8 -152 c-5 -84 -9 -182 -9 -218 l0 -65 49 -3 c27 -2 54 2 60 8 7 7 15 94 21 223 l10 212 68 3 c63 3 69 5 78 30 6 15 8 41 4 59 l-6 33 -87 -2 c-48 -1 -141 -4 -206 -8z"/>
-          </g>
-        </svg>
-      </a>
-      <nav class="nav" aria-label="Site links">
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-      </nav>
+      <div class="header-inner">
+        <a class="logo" href="/" aria-label="Fit Txt home">
+          <svg
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="120"
+            height="52"
+            viewBox="0 0 300 129"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+          >
+            <g transform="translate(0,129) scale(0.1,-0.1)" fill="#000000" stroke="none">
+              <path d="M1975 1283 c-197 -23 -281 -42 -415 -94 -154 -59 -298 -176 -351 -286 -17 -34 -25 -70 -27 -126 -4 -74 -2 -83 32 -152 81 -165 297 -295 578 -350 l87 -17 -19 -49 c-26 -64 -64 -125 -109 -172 l-36 -38 30 6 c128 28 237 91 360 205 38 35 45 38 121 43 336 24 639 179 737 376 26 54 31 76 31 136 0 161 -119 303 -341 407 -177 83 -488 134 -678 111z m-162 -293 c6 -22 5 -45 -2 -62 -10 -27 -13 -28 -80 -28 l-69 0 -6 -187 c-4 -104 -10 -204 -14 -223 -7 -34 -9 -35 -57 -38 -79 -4 -77 -8 -66 179 6 90 11 185 11 212 l0 47 -65 0 c-53 0 -66 3 -75 19 -14 28 -13 86 3 99 12 11 181 19 347 18 l65 -1 8 -35z m252 -30 c19 -38 39 -70 43 -70 4 0 24 30 46 65 33 56 42 65 67 65 17 0 41 -11 59 -27 l30 -28 -65 -94 c-36 -52 -65 -98 -65 -103 0 -5 32 -63 71 -130 53 -91 69 -126 62 -138 -14 -21 -73 -60 -92 -60 -10 0 -36 37 -69 95 -29 52 -56 95 -61 95 -4 0 -29 -39 -56 -86 -26 -47 -54 -88 -62 -91 -23 -9 -82 24 -95 52 -10 23 -4 35 67 142 l78 117 -52 97 c-28 53 -51 104 -51 113 0 20 56 56 87 56 18 0 30 -15 58 -70z m749 54 c8 -20 8 -62 0 -91 -6 -21 -12 -23 -75 -23 l-68 0 -5 -32 c-3 -18 -8 -116 -12 -218 -4 -121 -10 -188 -18 -192 -14 -10 -98 -10 -112 0 -10 7 -5 181 10 370 l5 62 -68 0 c-63 0 -69 2 -79 25 -15 34 -15 67 1 88 10 14 35 17 152 20 77 1 168 4 201 5 49 2 63 -1 68 -14z" style="fill:#02bc42"/>
+              <path d="M136 1011 c-65 -4 -91 -10 -97 -21 -8 -15 -41 -532 -34 -538 10 -11 85 -13 104 -3 18 10 21 21 21 70 0 32 3 79 6 104 l6 45 100 4 c110 3 120 9 116 68 l-3 35 -102 3 -103 3 0 58 0 58 128 9 127 9 3 53 3 52 -93 -2 c-51 -1 -133 -4 -182 -7z"/>
+              <path d="M516 978 c-15 -110 -47 -502 -42 -514 6 -15 111 -20 120 -6 2 4 14 129 26 276 25 302 28 286 -52 286 l-47 0 -5 -42z"/>
+              <path d="M836 1010 c-117 -5 -120 -6 -126 -30 -4 -14 -3 -40 2 -57 l9 -33 70 0 71 0 -8 -152 c-5 -84 -9 -182 -9 -218 l0 -65 49 -3 c27 -2 54 2 60 8 7 7 15 94 21 223 l10 212 68 3 c63 3 69 5 78 30 6 15 8 41 4 59 l-6 33 -87 -2 c-48 -1 -141 -4 -206 -8z"/>
+            </g>
+          </svg>
+        </a>
+        <nav class="nav" aria-label="Site links">
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </nav>
+      </div>
     </header>
 
     <main class="hero">
       <section>
+        <div class="hero-mini-visual" aria-label="Example Fit Txt accountability text">
+          <div class="mini-message-top">
+            <span class="mini-avatar">FT</span>
+            <div>
+              <strong>Fit Txt</strong>
+              <span>Text message</span>
+            </div>
+          </div>
+          <div class="mini-thread">
+            <span class="mini-bubble coach">Workout today?</span>
+            <span class="mini-bubble user">After work.</span>
+            <span class="typing-dots" aria-label="Fit Txt is typing">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+        </div>
         <p class="eyebrow">Private beta</p>
         <h1>Fitness accountability that texts you back.</h1>
         <p class="lede">
@@ -267,7 +471,7 @@
         <ul class="points">
           <li>Direct coach-style check-ins</li>
           <li>AI accountability built around your goals and schedule</li>
-          <li>Premium human oversight planned after beta feedback</li>
+          <li>Premium adds a real human accountability partner alongside AI</li>
         </ul>
       </section>
 
@@ -281,7 +485,20 @@
           </label>
           <label>
             Mobile phone
-            <input name="phone" autocomplete="tel" inputmode="tel" placeholder="+15551234567" required />
+            <span class="phone-field">
+              <span class="phone-prefix" aria-hidden="true">
+                <span class="us-flag"></span>
+                <span>+1</span>
+              </span>
+              <input
+                name="phone"
+                autocomplete="tel-national"
+                inputmode="numeric"
+                maxlength="14"
+                placeholder="(750) 932-3498"
+                required
+              />
+            </span>
           </label>
           <label>
             Email
@@ -314,6 +531,11 @@
       const API_BASE = "https://fit-txt-production.up.railway.app";
       const form = document.querySelector("#beta-form");
       const status = document.querySelector("#status");
+      const phoneInput = form.querySelector('input[name="phone"]');
+
+      phoneInput.addEventListener("input", () => {
+        phoneInput.value = formatPhoneForDisplay(phoneInput.value);
+      });
 
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -325,6 +547,7 @@
         values.consentText = document.querySelector("#consent-text").innerText.trim();
 
         try {
+          values.phone = validateNorthAmericanPhone(values.phone);
           const response = await fetch(`${API_BASE}/api/beta-signup`, {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -334,12 +557,66 @@
           if (!response.ok) throw new Error(data.error || "Signup failed");
           form.reset();
           status.className = "status success";
-          status.textContent =
-            "You're on the Fit Txt beta list. We will text you from the official Fit Txt number when the beta opens.";
+          status.textContent = "You're on the Fit Txt beta list. Check your phone for the welcome text.";
         } catch (error) {
           status.textContent = error.message;
         }
       });
+
+      function nationalPhoneDigits(value) {
+        const digits = String(value || "").replace(/\D/g, "");
+        if (digits.length === 11 && digits.startsWith("1")) return digits.slice(1, 11);
+        return digits.slice(0, 10);
+      }
+
+      function formatPhoneForDisplay(value) {
+        const digits = nationalPhoneDigits(value);
+        if (!digits) return "";
+        if (digits.length <= 3) return `(${digits}`;
+        if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+        return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+      }
+
+      function validateNorthAmericanPhone(value) {
+        const national = nationalPhoneDigits(value);
+        const normalized = national.length === 10 ? `1${national}` : "";
+
+        if (!normalized || !/^1\d{10}$/.test(normalized)) {
+          throw new Error("Enter a valid US or Canadian mobile phone number.");
+        }
+
+        const area = national.slice(0, 3);
+        const exchange = national.slice(3, 6);
+        const line = national.slice(6);
+        const obviousFakeNumbers = new Set([
+          "0000000000",
+          "1111111111",
+          "2222222222",
+          "3333333333",
+          "4444444444",
+          "5555555555",
+          "6666666666",
+          "7777777777",
+          "8888888888",
+          "9999999999",
+          "1234567890",
+          "0123456789",
+        ]);
+
+        const invalidArea = !/^[2-9]\d{2}$/.test(area) || area.endsWith("11");
+        const invalidExchange = !/^[2-9]\d{2}$/.test(exchange) || exchange.endsWith("11");
+        if (
+          invalidArea ||
+          invalidExchange ||
+          line === "0000" ||
+          obviousFakeNumbers.has(national) ||
+          /^(\d)\1{9}$/.test(national)
+        ) {
+          throw new Error("Enter a valid US or Canadian mobile phone number.");
+        }
+
+        return `+${normalized}`;
+      }
     </script>
   </body>
 </html>
