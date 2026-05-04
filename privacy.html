@@ -5,75 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fit Txt Privacy Policy</title>
     <style>
+      :root {
+        --green: #02bc42;
+        --green-dark: #049e39;
+        --ink: #17201b;
+        --muted: #66746d;
+        --line: #dbe3dd;
+        --surface: #ffffff;
+        --soft: #f5f8f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        color: #17201b;
-        font-family: Lato, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: #fff;
+        font-family:
+          Lato, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        letter-spacing: 0;
       }
-      main {
-        width: min(820px, calc(100% - 36px));
-        margin: 0 auto;
-        padding: 42px 0 64px;
-      }
+
       a {
-        color: #049e39;
+        color: var(--green-dark);
         font-weight: 700;
       }
+
+      .header {
+        padding: 22px clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 26px;
+        font-style: italic;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .logo span {
+        margin-left: 4px;
+        padding: 2px 9px 4px;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-style: normal;
+      }
+
+      .nav {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .doc-main {
+        background: var(--soft);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .doc-content {
+        width: min(820px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 46px 0 68px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
       h1 {
-        margin: 20px 0 8px;
-        font-size: 38px;
+        margin: 0 0 8px;
+        font-size: clamp(38px, 6vw, 58px);
+        line-height: 1;
       }
+
       h2 {
-        margin: 28px 0 8px;
-        font-size: 20px;
+        margin: 30px 0 8px;
+        font-size: 21px;
       }
+
       p {
-        color: #66746d;
+        margin: 0 0 14px;
+        color: var(--muted);
         line-height: 1.62;
+      }
+
+      .updated {
+        margin-bottom: 30px;
+      }
+
+      .footer {
+        padding: 18px clamp(18px, 5vw, 64px);
+        color: var(--muted);
+        background: #fff;
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      @media (max-width: 800px) {
+        .header-inner {
+          display: grid;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <a href="/">Fit Txt</a>
-      <h1>Privacy Policy</h1>
-      <p>Last updated: May 4, 2026</p>
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="/" aria-label="Fit Txt home">FIT<span>TXT</span></a>
+        <nav class="nav" aria-label="Site links">
+          <a href="/">Sign Up</a>
+          <a href="/how-it-works.html">How It Works</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </nav>
+      </div>
+    </header>
 
-      <h2>What We Collect</h2>
-      <p>
-        Fit Txt collects information you provide, including your name, mobile number, email
-        address, fitness goals, check-in preferences, diet and exercise plans, and messages you
-        exchange with Fit Txt.
-      </p>
+    <main class="doc-main">
+      <article class="doc-content">
+        <p class="eyebrow">Privacy</p>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: May 4, 2026</p>
 
-      <h2>How We Use Information</h2>
-      <p>
-        We use this information to provide SMS-based fitness accountability, AI coaching replies,
-        beta access, customer support, billing, safety review, and service improvements.
-      </p>
+        <h2>What We Collect</h2>
+        <p>
+          Fit Txt collects information you provide, including your name, mobile number, email
+          address, fitness goals, check-in preferences, diet and exercise plans, and messages you
+          exchange with Fit Txt.
+        </p>
 
-      <h2>Text Messaging Consent</h2>
-      <p>
-        We use your mobile number only to provide Fit Txt messaging that you request or consent to
-        receive. Text messaging originator opt-in data and consent will not be shared with any
-        third parties for their own marketing purposes.
-      </p>
+        <h2>How We Use Information</h2>
+        <p>
+          We use this information to provide SMS-based fitness accountability, AI coaching replies,
+          beta access, customer support, billing, safety review, and service improvements.
+        </p>
 
-      <h2>Vendors</h2>
-      <p>
-        We may use service providers such as Twilio for messaging, Stripe for payments, hosting
-        providers for infrastructure, and AI providers for generating coaching responses. These
-        providers process information only as needed to provide Fit Txt.
-      </p>
+        <h2>Text Messaging Consent</h2>
+        <p>
+          We use your mobile number only to provide Fit Txt messaging that you request or consent to
+          receive. Text messaging originator opt-in data and consent will not be shared with any
+          third parties for their own marketing purposes.
+        </p>
 
-      <h2>Your Choices</h2>
-      <p>
-        You can reply STOP to unsubscribe from Fit Txt text messages. You can reply HELP for help.
-        You may also contact support to request access, correction, or deletion of your data.
-      </p>
+        <h2>Message Review</h2>
+        <p>
+          Fit Txt is mostly powered by AI, but authorized admins may review conversations to provide
+          support, improve safety, troubleshoot issues, or help with premium accountability.
+        </p>
 
-      <h2>Contact</h2>
-      <p>Email: support@fittxt.com</p>
+        <h2>Vendors</h2>
+        <p>
+          We may use service providers such as Twilio for messaging, Stripe for payments, hosting
+          providers for infrastructure, and AI providers for generating coaching responses. These
+          providers process information only as needed to provide Fit Txt.
+        </p>
+
+        <h2>Your Choices</h2>
+        <p>
+          You can reply STOP to unsubscribe from Fit Txt text messages. You can reply HELP for help.
+          You may also contact support to request access, correction, or deletion of your data.
+        </p>
+
+        <h2>Contact</h2>
+        <p>Email: support@fittxt.com</p>
+      </article>
     </main>
+
+    <footer class="footer">
+      Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
+      or certified personal trainer. For support, email support@fittxt.com.
+    </footer>
   </body>
 </html>

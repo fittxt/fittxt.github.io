@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Fit Txt Works</title>
+    <meta
+      name="description"
+      content="Learn how Fit Txt uses SMS accountability, AI check-ins, human support, and simple STOP/HELP controls."
+    />
+    <style>
+      :root {
+        --green: #02bc42;
+        --green-dark: #049e39;
+        --ink: #17201b;
+        --muted: #66746d;
+        --line: #dbe3dd;
+        --surface: #ffffff;
+        --soft: #f5f8f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #fff;
+        font-family:
+          Lato, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: var(--green-dark);
+        font-weight: 700;
+      }
+
+      .header {
+        padding: 22px clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 26px;
+        font-style: italic;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .logo span {
+        margin-left: 4px;
+        padding: 2px 9px 4px;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-style: normal;
+      }
+
+      .nav {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .doc-main {
+        background: var(--soft);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .doc-content {
+        width: min(900px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 46px 0 68px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(40px, 6vw, 64px);
+        line-height: 1;
+      }
+
+      .lede {
+        max-width: 720px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 20px;
+        line-height: 1.48;
+      }
+
+      .steps {
+        display: grid;
+        gap: 14px;
+        margin: 34px 0 0;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 16px;
+        padding: 18px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .step-number {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-weight: 900;
+      }
+
+      h2 {
+        margin: 2px 0 6px;
+        font-size: 21px;
+      }
+
+      h3 {
+        margin: 36px 0 8px;
+        font-size: 24px;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        line-height: 1.62;
+      }
+
+      p {
+        margin: 0 0 14px;
+      }
+
+      ul {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 22px;
+      }
+
+      .control-list strong {
+        color: var(--ink);
+      }
+
+      .premium-box {
+        margin: 34px 0 0;
+        padding: 22px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(23, 32, 27, 0.06);
+      }
+
+      .premium-box h3 {
+        margin-top: 0;
+      }
+
+      .footer {
+        padding: 18px clamp(18px, 5vw, 64px);
+        color: var(--muted);
+        background: #fff;
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      @media (max-width: 800px) {
+        .header-inner {
+          display: grid;
+        }
+
+        .step {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="/" aria-label="Fit Txt home">FIT<span>TXT</span></a>
+        <nav class="nav" aria-label="Site links">
+          <a href="/">Sign Up</a>
+          <a href="/how-it-works.html">How It Works</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc-main">
+      <article class="doc-content">
+        <p class="eyebrow">How It Works</p>
+        <h1>Accountability by text, without another app to manage.</h1>
+        <p class="lede">
+          Fit Txt learns what you are working toward, checks in by SMS, and pushes you to follow
+          through with the level of directness you choose.
+        </p>
+
+        <div class="steps">
+          <section class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h2>Join the beta</h2>
+              <p>
+                Enter your name, mobile number, and optional email. You will need to agree to
+                receive recurring Fit Txt SMS/MMS messages before we text you.
+              </p>
+            </div>
+          </section>
+
+          <section class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h2>Get your welcome text</h2>
+              <p>
+                After opt-in, Fit Txt can send a welcome text and begin learning about your goals,
+                schedule, diet or workout plan, motivation style, and any restrictions you share.
+              </p>
+            </div>
+          </section>
+
+          <section class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h2>Set the accountability level</h2>
+              <p>
+                Some people want friendly encouragement. Others want blunt coach-style pressure.
+                Fit Txt is designed to personalize the tone so the push feels useful, not random.
+              </p>
+            </div>
+          </section>
+
+          <section class="step">
+            <div class="step-number">4</div>
+            <div>
+              <h2>Check in by text</h2>
+              <p>
+                Most conversations happen with AI over SMS. Fit Txt can ask about workouts, meals,
+                weigh-ins, missed plans, and next actions so your goals stay in front of you.
+              </p>
+            </div>
+          </section>
+
+          <section class="step">
+            <div class="step-number">5</div>
+            <div>
+              <h2>Add human accountability when available</h2>
+              <p>
+                Premium support may include a real human accountability partner alongside AI. That
+                person is there for follow-up and motivation, not certified medical, nutrition, or
+                personal training advice.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <section class="premium-box" aria-labelledby="premium-title">
+          <h3 id="premium-title">Premium Accountability</h3>
+          <p>
+            Fit Txt starts with AI-powered accountability, but Premium is designed for people who
+            want a real human accountability partner alongside the AI. Premium users get higher
+            message limits and can receive additional human follow-up when extra support would help.
+          </p>
+          <p>
+            The human role is accountability, motivation, and follow-through. Premium does not mean
+            you are receiving certified medical, dietetic, therapy, or personal training advice.
+          </p>
+        </section>
+
+        <h3>How We Keep Data Safe</h3>
+        <p>
+          Fit Txt only asks for information that helps provide accountability. Conversations may be
+          stored so the service can remember context, show history to authorized admins, and provide
+          support. Admin access is permission-based, and we do not sell SMS opt-in data or consent
+          information to third parties for their own marketing.
+        </p>
+        <p>
+          We use trusted service providers for messaging, payments, hosting, and AI responses. Those
+          vendors process information as needed to operate Fit Txt.
+        </p>
+
+        <h3>Text Message Controls</h3>
+        <ul class="control-list">
+          <li><strong>STOP:</strong> unsubscribe from Fit Txt text messages at any time.</li>
+          <li><strong>HELP:</strong> get help or support information by text.</li>
+          <li>
+            <strong>START:</strong> restart messages if your carrier supports it, or contact
+            support@fittxt.com if you need help opting back in.
+          </li>
+        </ul>
+
+        <h3>Important Health Note</h3>
+        <p>
+          Fit Txt provides accountability support, not medical care. It does not replace a doctor,
+          registered dietician, therapist, or certified personal trainer. If you have a medical
+          concern, injury, emergency, or feel unsafe, contact a qualified professional or emergency
+          services.
+        </p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
+      or certified personal trainer. For support, email support@fittxt.com.
+    </footer>
+  </body>
+</html>

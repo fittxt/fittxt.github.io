@@ -5,72 +5,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fit Txt Terms of Service</title>
     <style>
+      :root {
+        --green: #02bc42;
+        --green-dark: #049e39;
+        --ink: #17201b;
+        --muted: #66746d;
+        --line: #dbe3dd;
+        --surface: #ffffff;
+        --soft: #f5f8f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        color: #17201b;
-        font-family: Lato, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: #fff;
+        font-family:
+          Lato, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        letter-spacing: 0;
       }
-      main {
-        width: min(820px, calc(100% - 36px));
-        margin: 0 auto;
-        padding: 42px 0 64px;
-      }
+
       a {
-        color: #049e39;
+        color: var(--green-dark);
         font-weight: 700;
       }
+
+      .header {
+        padding: 22px clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 26px;
+        font-style: italic;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .logo span {
+        margin-left: 4px;
+        padding: 2px 9px 4px;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-style: normal;
+      }
+
+      .nav {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .doc-main {
+        background: var(--soft);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .doc-content {
+        width: min(820px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 46px 0 68px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
       h1 {
-        margin: 20px 0 8px;
-        font-size: 38px;
+        margin: 0 0 8px;
+        font-size: clamp(38px, 6vw, 58px);
+        line-height: 1;
       }
+
       h2 {
-        margin: 28px 0 8px;
-        font-size: 20px;
+        margin: 30px 0 8px;
+        font-size: 21px;
       }
+
       p {
-        color: #66746d;
+        margin: 0 0 14px;
+        color: var(--muted);
         line-height: 1.62;
+      }
+
+      .updated {
+        margin-bottom: 30px;
+      }
+
+      .footer {
+        padding: 18px clamp(18px, 5vw, 64px);
+        color: var(--muted);
+        background: #fff;
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      @media (max-width: 800px) {
+        .header-inner {
+          display: grid;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <a href="/">Fit Txt</a>
-      <h1>Terms of Service</h1>
-      <p>Last updated: May 4, 2026</p>
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="/" aria-label="Fit Txt home">FIT<span>TXT</span></a>
+        <nav class="nav" aria-label="Site links">
+          <a href="/">Sign Up</a>
+          <a href="/how-it-works.html">How It Works</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </nav>
+      </div>
+    </header>
 
-      <h2>Service</h2>
-      <p>
-        Fit Txt provides text-based fitness accountability, motivational check-ins, and related
-        support. Fit Txt is not medical care and does not replace a physician, registered
-        dietician, therapist, or certified personal trainer.
-      </p>
+    <main class="doc-main">
+      <article class="doc-content">
+        <p class="eyebrow">Terms</p>
+        <h1>Terms of Service</h1>
+        <p class="updated">Last updated: May 4, 2026</p>
 
-      <h2>SMS Program</h2>
-      <p>
-        By providing your phone number and opting into Fit Txt, you consent to receive recurring
-        automated SMS/MMS messages from Fit Txt about fitness accountability, check-ins, coaching
-        reminders, signup/payment updates, and related service messages. Message frequency varies.
-        Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for
-        help. Carriers are not liable for delayed or undelivered messages. Consent is not a
-        condition of purchase.
-      </p>
+        <h2>Service</h2>
+        <p>
+          Fit Txt provides text-based fitness accountability, motivational check-ins, and related
+          support. Fit Txt is not medical care and does not replace a physician, registered
+          dietician, therapist, or certified personal trainer.
+        </p>
 
-      <h2>Health Disclaimer</h2>
-      <p>
-        Fit Txt provides general fitness motivation and accountability. Do not use Fit Txt for
-        emergencies, diagnosis, treatment, or medical advice. If you have urgent symptoms or feel
-        unsafe, contact emergency services or a qualified professional.
-      </p>
+        <h2>SMS Program</h2>
+        <p>
+          By providing your phone number and opting into Fit Txt, you consent to receive recurring
+          automated SMS/MMS messages from Fit Txt about fitness accountability, check-ins, coaching
+          reminders, signup/payment updates, and related service messages. Message frequency varies.
+          Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for
+          help. Carriers are not liable for delayed or undelivered messages. Consent is not a
+          condition of purchase.
+        </p>
 
-      <h2>Payments</h2>
-      <p>
-        Premium features may be billed monthly. Subscription payments, cancellations, and receipts
-        are handled through Stripe or another payment provider.
-      </p>
+        <h2>AI and Human Accountability</h2>
+        <p>
+          Fit Txt responses may be generated by AI. Depending on your plan or support needs,
+          authorized Fit Txt admins may review or respond to messages to help provide the service.
+        </p>
 
-      <h2>Contact</h2>
-      <p>Email: support@fittxt.com</p>
+        <h2>Health Disclaimer</h2>
+        <p>
+          Fit Txt provides general fitness motivation and accountability. Do not use Fit Txt for
+          emergencies, diagnosis, treatment, or medical advice. If you have urgent symptoms or feel
+          unsafe, contact emergency services or a qualified professional.
+        </p>
+
+        <h2>Payments</h2>
+        <p>
+          Premium features may be billed monthly. Subscription payments, cancellations, and receipts
+          are handled through Stripe or another payment provider.
+        </p>
+
+        <h2>Contact</h2>
+        <p>Email: support@fittxt.com</p>
+      </article>
     </main>
+
+    <footer class="footer">
+      Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
+      or certified personal trainer. For support, email support@fittxt.com.
+    </footer>
   </body>
 </html>
