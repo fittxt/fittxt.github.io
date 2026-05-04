@@ -220,15 +220,14 @@
       }
 
       .points li {
-        position: relative;
-        padding-left: 24px;
+        display: grid;
+        grid-template-columns: 10px minmax(0, 1fr);
+        align-items: center;
+        gap: 14px;
       }
 
       .points li::before {
         content: "";
-        position: absolute;
-        left: 0;
-        top: 0.58em;
         width: 10px;
         height: 10px;
         border-radius: 999px;
