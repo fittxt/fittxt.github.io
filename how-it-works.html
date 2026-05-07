@@ -176,6 +176,56 @@
         color: var(--ink);
       }
 
+      .sample-week {
+        margin: 38px 0 0;
+      }
+
+      .sample-week > p {
+        max-width: 720px;
+      }
+
+      .week-list {
+        display: grid;
+        gap: 12px;
+        margin: 18px 0 0;
+      }
+
+      .week-day {
+        display: grid;
+        grid-template-columns: 132px minmax(0, 1fr);
+        gap: 18px;
+        padding: 18px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .day-label {
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .week-day h4 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+
+      .week-day p {
+        margin-bottom: 0;
+      }
+
+      .sample-message {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: #e8f4ee;
+        color: var(--ink);
+        font-weight: 700;
+        line-height: 1.48;
+      }
+
       .premium-box {
         margin: 34px 0 0;
         padding: 22px;
@@ -210,6 +260,11 @@
 
         .step {
           grid-template-columns: 1fr;
+        }
+
+        .week-day {
+          grid-template-columns: 1fr;
+          gap: 8px;
         }
       }
     </style>
@@ -293,6 +348,101 @@
             </div>
           </section>
         </div>
+
+        <section class="sample-week" aria-labelledby="sample-week-title">
+          <h3 id="sample-week-title">Sample Week with Fit Txt</h3>
+          <p>
+            Every week is personalized around your goals, schedule, and motivation style. A real
+            week might look something like this:
+          </p>
+
+          <div class="week-list">
+            <section class="week-day">
+              <div class="day-label">Monday</div>
+              <div>
+                <h4>Set the target</h4>
+                <p>
+                  Fit Txt checks what matters this week, confirms your workout windows, and asks
+                  what could get in the way.
+                </p>
+                <p class="sample-message">
+                  "You said three workouts this week. Which days are locked in?"
+                </p>
+              </div>
+            </section>
+
+            <section class="week-day">
+              <div class="day-label">Tuesday</div>
+              <div>
+                <h4>Follow up before the excuse wins</h4>
+                <p>
+                  If your plan is to train after work, Fit Txt can check in before the decision
+                  gets fuzzy.
+                </p>
+                <p class="sample-message">
+                  "It is almost after-work workout time. Are you going, or are we already
+                  negotiating?"
+                </p>
+              </div>
+            </section>
+
+            <section class="week-day">
+              <div class="day-label">Wednesday</div>
+              <div>
+                <h4>Keep food choices visible</h4>
+                <p>
+                  Fit Txt can help you stay aware of meal plans, protein targets, late-night
+                  snacking, or whatever nutrition behavior you are trying to improve.
+                </p>
+                <p class="sample-message">
+                  "What is dinner tonight? Give me the real answer, not the imaginary perfect one."
+                </p>
+              </div>
+            </section>
+
+            <section class="week-day">
+              <div class="day-label">Thursday</div>
+              <div>
+                <h4>Reset missed plans quickly</h4>
+                <p>
+                  When life gets messy, the goal is not guilt. The goal is getting back to the next
+                  useful action.
+                </p>
+                <p class="sample-message">
+                  "You missed yesterday. Fine. What is the next move today?"
+                </p>
+              </div>
+            </section>
+
+            <section class="week-day">
+              <div class="day-label">Friday</div>
+              <div>
+                <h4>Review the week honestly</h4>
+                <p>
+                  Fit Txt can ask what actually happened, what worked, and what should change for
+                  the next week.
+                </p>
+                <p class="sample-message">
+                  "Quick scorecard: workouts done, meals on track, and one thing to fix next week."
+                </p>
+              </div>
+            </section>
+
+            <section class="week-day">
+              <div class="day-label">Weekend</div>
+              <div>
+                <h4>Plan before Monday arrives</h4>
+                <p>
+                  A small weekend check-in can turn vague intentions into a plan that is easier to
+                  follow once the week starts.
+                </p>
+                <p class="sample-message">
+                  "Pick your workout days now. Future you does not get to wing it."
+                </p>
+              </div>
+            </section>
+          </div>
+        </section>
 
         <section class="premium-box" aria-labelledby="premium-title">
           <h3 id="premium-title">Premium Accountability</h3>
