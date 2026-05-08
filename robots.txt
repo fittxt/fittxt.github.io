@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fittxt.com/sitemap.xml
