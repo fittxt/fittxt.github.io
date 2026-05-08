@@ -418,6 +418,95 @@
         text-align: center;
       }
 
+      .faq {
+        padding: clamp(38px, 6vw, 72px) clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-top: 1px solid var(--line);
+      }
+
+      .faq-inner {
+        width: min(900px, 100%);
+        margin: 0 auto;
+      }
+
+      .faq h2 {
+        max-width: 680px;
+        margin: 0;
+        font-size: clamp(32px, 4vw, 46px);
+        line-height: 1.05;
+      }
+
+      .faq-intro {
+        max-width: 620px;
+        margin: 14px 0 28px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .faq details {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+      }
+
+      .faq details[open] {
+        border-color: #cbe6d7;
+        box-shadow: 0 12px 30px rgba(23, 32, 27, 0.06);
+      }
+
+      .faq summary {
+        min-height: 58px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 20px;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 18px;
+        font-weight: 900;
+        list-style: none;
+        cursor: pointer;
+      }
+
+      .faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq summary::marker {
+        content: "";
+      }
+
+      .faq summary::after {
+        content: "";
+        width: 9px;
+        height: 9px;
+        justify-self: center;
+        margin-top: -4px;
+        border-right: 2px solid var(--green-dark);
+        border-bottom: 2px solid var(--green-dark);
+        transform: rotate(45deg);
+        transition: transform 160ms ease, margin-top 160ms ease;
+      }
+
+      .faq details[open] summary::after {
+        margin-top: 4px;
+        transform: rotate(225deg);
+      }
+
+      .faq-answer {
+        padding: 0 18px 18px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .faq-answer p {
+        margin: 0;
+      }
+
       .footer {
         padding: 18px clamp(18px, 5vw, 64px);
         color: var(--muted);
@@ -433,11 +522,6 @@
       }
 
       @media (max-width: 800px) {
-        .header {
-          padding-right: 16px;
-          padding-left: 16px;
-        }
-
         .header-inner {
           display: grid;
           justify-items: center;
@@ -445,7 +529,6 @@
         }
 
         .nav {
-          width: 100%;
           justify-content: center;
         }
 
@@ -458,6 +541,19 @@
 
         h1 {
           font-size: 44px;
+        }
+
+        .faq {
+          padding: 34px 16px 42px;
+        }
+
+        .faq summary {
+          min-height: 54px;
+          padding: 15px 16px;
+        }
+
+        .faq-answer {
+          padding: 0 16px 16px;
         }
       }
     </style>
@@ -503,7 +599,7 @@
         </p>
         <ul class="points">
           <li>Direct coach-style check-ins</li>
-          <li>AI accountability built around your goals and schedule</li>
+          <li>Accountability built around your goals and schedule</li>
           <li>Upgrade for real human accountability alongside AI</li>
         </ul>
       </section>
@@ -558,6 +654,79 @@
         </form>
       </section>
     </main>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="faq-inner">
+        <p class="eyebrow">FAQs</p>
+        <h2 id="faq-title">Your questions, answered</h2>
+        <p class="faq-intro">
+          Common questions about Fit Txt, your text-based accountability buddy, built for people who want to
+          achieve their goals without downloading another app.
+        </p>
+
+        <div class="faq-list">
+          <details open>
+            <summary>What happens after I sign up?</summary>
+            <div class="faq-answer">
+              <p>
+                You will get a welcome text at the mobile number you provide. From there, Fit Txt
+                will learn your goals, schedule, diet or exercise plan, and preferred accountability
+                style, then use text check-ins to help you follow through.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Is Fit Txt free?</summary>
+            <div class="faq-answer">
+              <p>
+                Yes! The standard version of Fit Txt is free. You may upgrade to Premium at any point in the future for real human
+                accountability and a larger daily conversation limit.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Do I need to download an app?</summary>
+            <div class="faq-answer">
+              <p>
+                No. Fit Txt works over SMS/MMS, so you can reply from your normal text messages.
+                That's the whole point. No new app or program to learn.
+                Fit Txt meets you where you already are.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Can I stop the messages?</summary>
+            <div class="faq-answer">
+              <p>Yes. Reply STOP at any time. You can also reply HELP for support details.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Is Fit Txt medical or personal training advice?</summary>
+            <div class="faq-answer">
+              <p>
+                No. Fit Txt provides motivation and accountability support, not medical care, diagnosis,
+                dietetic advice, therapy, or certified personal training.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Will a human read my messages?</summary>
+            <div class="faq-answer">
+              <p>
+                Most replies are AI-powered, but authorized Fit Txt admins may review conversations
+                to provide support, improve safety, troubleshoot issues, or help with premium
+                accountability.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer">
       Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
