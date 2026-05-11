@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fit Txt | Free Fitness Accountability by Text Message</title>
+    <title>Fit Txt | Fitness Accountability by Text Message</title>
     <meta
       name="description"
-      content="Fit Txt is a free private beta for text-message fitness accountability, SMS check-ins, workout reminders, and follow-through in the US and Canada."
+      content="Fit Txt is a private beta for text-message fitness accountability, SMS check-ins, workout reminders, and follow-through. Try it free for 14 days, no card required."
     />
     <link rel="canonical" href="https://fittxt.com/" />
     <meta property="og:site_name" content="Fit Txt" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Fit Txt | Free Fitness Accountability by Text Message" />
+    <meta property="og:title" content="Fit Txt | Fitness Accountability by Text Message" />
     <meta
       property="og:description"
       content="Stay honest with your fitness goals through direct text-message accountability. No app to download, no login to remember."
     />
     <meta property="og:url" content="https://fittxt.com/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Fit Txt | Free Fitness Accountability by Text Message" />
+    <meta name="twitter:title" content="Fit Txt | Fitness Accountability by Text Message" />
     <meta
       name="twitter:description"
-      content="Free private beta for SMS fitness accountability, check-ins, and workout follow-through support."
+      content="Private beta for SMS fitness accountability. Try Fit Txt free for 14 days, no card required."
     />
     <script type="application/ld+json">
       {
@@ -68,8 +68,8 @@
             "@type": "WebPage",
             "@id": "https://fittxt.com/#webpage",
             "url": "https://fittxt.com/",
-            "name": "Fit Txt | Free Fitness Accountability by Text Message",
-            "description": "Free private beta for text-message fitness accountability, direct SMS check-ins, workout reminders, and follow-through support.",
+            "name": "Fit Txt | Fitness Accountability by Text Message",
+            "description": "Private beta for text-message fitness accountability, direct SMS check-ins, workout reminders, and follow-through support. Try it free for 14 days, no card required.",
             "isPartOf": {
               "@id": "https://fittxt.com/#website"
             },
@@ -498,6 +498,95 @@
         text-align: center;
       }
 
+      .pricing {
+        padding: clamp(38px, 6vw, 72px) clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-top: 1px solid var(--line);
+      }
+
+      .pricing-inner {
+        width: min(1080px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+        align-items: start;
+        gap: clamp(24px, 5vw, 54px);
+      }
+
+      .pricing h2 {
+        max-width: 620px;
+        margin: 0;
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.03;
+      }
+
+      .pricing-copy {
+        max-width: 640px;
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .pricing-list {
+        display: grid;
+        gap: 10px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .pricing-list li {
+        display: grid;
+        grid-template-columns: 10px minmax(0, 1fr);
+        align-items: center;
+        gap: 14px;
+      }
+
+      .pricing-list li::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--green);
+      }
+
+      .price-panel {
+        border: 1px solid #cbe6d7;
+        border-radius: 8px;
+        background: var(--soft);
+        padding: 22px;
+      }
+
+      .price-panel h3 {
+        margin: 0 0 14px;
+        font-size: 24px;
+      }
+
+      .price-row {
+        display: grid;
+        gap: 4px;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .price-row:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .price-row strong {
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .price-row span {
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
       .faq {
         padding: clamp(38px, 6vw, 72px) clamp(18px, 5vw, 64px);
         background: #fff;
@@ -635,6 +724,14 @@
           padding: 34px 16px 42px;
         }
 
+        .pricing {
+          padding: 34px 16px 42px;
+        }
+
+        .pricing-inner {
+          grid-template-columns: 1fr;
+        }
+
         .faq summary {
           min-height: 54px;
           padding: 15px 16px;
@@ -679,22 +776,23 @@
             </span>
           </div>
         </div>
-        <p class="eyebrow">Private beta - US and Canada</p>
-        <h1>Free fitness accountability that texts you back.</h1>
+        <p class="eyebrow">14-day free trial - no card required</p>
+        <h1>Fitness accountability that texts you back.</h1>
         <p class="lede">
-          Fit Txt helps you stay honest with your health and fitness goals through direct,
-          text-message based accountability. No app to download, no login to remember.
+          Fit Txt was built for people who keep restarting. Busy parents, people getting
+          back in shape, gym members who are not going, and anyone trying to stack a few
+          simple health habits can get steady daily follow-up by text.
         </p>
         <ul class="points">
-          <li>Direct coach-style check-ins</li>
-          <li>Accountability built around your goals and schedule</li>
-          <li>Upgrade for real human accountability alongside AI</li>
+          <li>Start with a 14-day free trial</li>
+          <li>Daily nudges for movement, food, water, sleep, or your plan</li>
+          <li>Continue for $29/month during beta; future price $39/month</li>
         </ul>
       </section>
 
       <section class="signup" aria-labelledby="signup-title">
-        <h2 id="signup-title">Join the first beta group</h2>
-        <p>We are inviting 25 early testers.</p>
+        <h2 id="signup-title">Join the beta</h2>
+        <p>Try Fit Txt free for 14 days. No card required.</p>
         <form id="beta-form">
           <label class="signup-trap" aria-hidden="true">
             Website
@@ -737,7 +835,7 @@
               <a href="/privacy.html" target="_blank" rel="noreferrer">Privacy Policy</a>.
             </span>
           </label>
-          <button type="submit">Request beta access</button>
+          <button type="submit">Join the beta</button>
           <p class="form-note">
             Fit Txt provides accountability support, not medical, dietetic, or personal training
             advice.
@@ -747,13 +845,47 @@
       </section>
     </main>
 
+    <section class="pricing" aria-labelledby="pricing-title">
+      <div class="pricing-inner">
+        <div>
+          <p class="eyebrow">Simple pricing</p>
+          <h2 id="pricing-title">Try it first. Keep it when the follow-through starts working.</h2>
+          <p class="pricing-copy">
+            Fit Txt is designed to be easy to start and easy to stick with: no app, no login,
+            and no card needed for the trial. After 14 days, continuing unlocks the higher
+            paid reply limit and human oversight when it is needed.
+          </p>
+          <ul class="pricing-list">
+            <li>10 AI replies per day during the trial</li>
+            <li>25 AI replies per day after continuing</li>
+            <li>Built for 1-3 simple habits, not another complicated program</li>
+          </ul>
+        </div>
+        <aside class="price-panel" aria-label="Fit Txt pricing">
+          <h3>Beta offer</h3>
+          <div class="price-row">
+            <strong>$0</strong>
+            <span>14-day free trial, no card required</span>
+          </div>
+          <div class="price-row">
+            <strong>$29/mo</strong>
+            <span>Beta users keep this price when they continue after trial</span>
+          </div>
+          <div class="price-row">
+            <strong>$39/mo</strong>
+            <span>Future standard monthly price after beta</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
     <section class="faq" aria-labelledby="faq-title">
       <div class="faq-inner">
         <p class="eyebrow">FAQs</p>
         <h2 id="faq-title">Your questions, answered</h2>
         <p class="faq-intro">
-          Common questions about Fit Txt, your text-based accountability buddy, built for people who want to
-          achieve their goals without downloading another app.
+          Common questions about Fit Txt, your text-based accountability buddy, built for people
+          who want to stay consistent without downloading another app.
         </p>
 
         <div class="faq-list">
@@ -769,11 +901,12 @@
           </details>
 
           <details>
-            <summary>Is Fit Txt free?</summary>
+            <summary>How does the free trial work?</summary>
             <div class="faq-answer">
               <p>
-                Yes! The standard version of Fit Txt is free. You may upgrade to Premium at any point in the future for real human
-                accountability and a larger daily conversation limit.
+                You can try Fit Txt free for 14 days with no card required. Trial users get
+                10 AI replies per day. If you continue after the trial, beta users pay
+                $29/month, and the future standard price will be $39/month.
               </p>
             </div>
           </details>
@@ -811,7 +944,7 @@
             <div class="faq-answer">
               <p>
                 Most replies are AI-powered, but authorized Fit Txt admins may review conversations
-                to provide support, improve safety, troubleshoot issues, or help with premium
+                to provide support, improve safety, troubleshoot issues, or help with paid
                 accountability.
               </p>
             </div>
@@ -858,7 +991,7 @@
           if (!response.ok) throw new Error(data.error || "Signup failed");
           form.reset();
           status.className = "status success";
-          status.textContent = "You're on the Fit Txt beta list. Check your phone for the welcome text.";
+          status.textContent = "You're in the Fit Txt beta. Check your phone to start your 14-day trial.";
         } catch (error) {
           status.textContent = error.message;
         }

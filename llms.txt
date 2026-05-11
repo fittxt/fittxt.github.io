@@ -6,7 +6,7 @@ Fit Txt does not provide medical care, diagnosis, treatment, dietetic advice, or
 
 ## Key Pages
 
-- https://fittxt.com/ - Beta signup for Fit Txt, a free text-message fitness accountability service.
+- https://fittxt.com/ - Beta signup for Fit Txt, a text-message fitness accountability service with a 14-day free trial.
 - https://fittxt.com/how-it-works.html - Explains how Fit Txt uses SMS check-ins, AI-powered accountability, optional human support, and STOP/HELP controls.
 - https://fittxt.com/privacy.html - Privacy policy for Fit Txt beta signup, SMS messages, support, and service providers.
 - https://fittxt.com/terms.html - Terms of service, text-message controls, and health disclaimers.
@@ -17,5 +17,5 @@ Fit Txt does not provide medical care, diagnosis, treatment, dietetic advice, or
 - Fit Txt is designed for SMS/MMS accountability, not a downloadable mobile app.
 - Fit Txt works in the United States and Canada.
 - Users can reply STOP to unsubscribe from messages and HELP for support details.
-- Premium accountability may include additional human support alongside AI-powered check-ins.
+- Paid accountability may include additional human support alongside AI-powered check-ins.
 - Support email: help@fittxt.com
