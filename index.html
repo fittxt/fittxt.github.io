@@ -351,6 +351,14 @@
         color: var(--muted);
       }
 
+      .signup-trap {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
       form {
         display: grid;
         gap: 14px;
@@ -688,6 +696,10 @@
         <h2 id="signup-title">Join the first beta group</h2>
         <p>We are inviting 25 early testers.</p>
         <form id="beta-form">
+          <label class="signup-trap" aria-hidden="true">
+            Website
+            <input name="website" autocomplete="off" tabindex="-1" />
+          </label>
           <label>
             Name
             <input name="name" autocomplete="name" required />
@@ -815,6 +827,7 @@
 
     <script>
       const API_BASE = "https://fit-txt-production.up.railway.app";
+      const SIGNUP_QUALITY_MESSAGE = "Please use your real name and email for beta access.";
       const form = document.querySelector("#beta-form");
       const status = document.querySelector("#status");
       const phoneInput = form.querySelector('input[name="phone"]');
@@ -833,6 +846,8 @@
         values.consentText = document.querySelector("#consent-text").innerText.trim();
 
         try {
+          const signupQualityError = validateSignupQuality(values);
+          if (signupQualityError) throw new Error(signupQualityError);
           values.phone = validateNorthAmericanPhone(values.phone);
           const response = await fetch(`${API_BASE}/api/beta-signup`, {
             method: "POST",
@@ -902,6 +917,61 @@
         }
 
         return `+${normalized}`;
+      }
+
+      function validateSignupQuality(values) {
+        if (String(values.website || "").trim()) return SIGNUP_QUALITY_MESSAGE;
+
+        const name = String(values.name || "").trim();
+        const email = String(values.email || "").trim().toLowerCase();
+
+        if (!isReasonableSignupName(name)) return SIGNUP_QUALITY_MESSAGE;
+        if (email && !isReasonableSignupEmail(email)) return SIGNUP_QUALITY_MESSAGE;
+        return "";
+      }
+
+      function isReasonableSignupName(name) {
+        if (name.length < 2 || name.length > 60 || !/\p{L}/u.test(name)) return false;
+        if (/(https?:\/\/|www\.|\.com\b|@)/i.test(name)) return false;
+        if ((name.match(/\d/g) || []).length > 2) return false;
+
+        const asciiLetters = (name.match(/[A-Za-z]/g) || []).join("");
+        if (!asciiLetters) return true;
+
+        const singleToken = !/[\s.'-]/.test(name);
+        const uppercase = (asciiLetters.match(/[A-Z]/g) || []).length;
+        const lowercase = (asciiLetters.match(/[a-z]/g) || []).length;
+        const vowels = (asciiLetters.match(/[aeiouy]/gi) || []).length;
+        const vowelRatio = vowels / asciiLetters.length;
+        const hasLongConsonantRun = /[bcdfghjklmnpqrstvwxyz]{5,}/i.test(asciiLetters);
+
+        return !(
+          singleToken &&
+          asciiLetters.length >= 14 &&
+          uppercase >= 4 &&
+          lowercase >= 4 &&
+          (vowelRatio < 0.35 || hasLongConsonantRun)
+        );
+      }
+
+      function isReasonableSignupEmail(email) {
+        if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+
+        const [local, domain] = email.split("@");
+        if (!local || !domain || local.startsWith(".") || local.endsWith(".") || local.includes("..")) {
+          return false;
+        }
+
+        const segments = local.split(".");
+        const dotCount = segments.length - 1;
+        const shortSegments = segments.filter((segment) => segment.length <= 2).length;
+        const compactLocal = local.replace(/\./g, "");
+        const dotStuffedGmail =
+          ["gmail.com", "googlemail.com"].includes(domain) &&
+          dotCount >= 4 &&
+          (shortSegments >= Math.ceil(segments.length / 2) || compactLocal.length <= 14);
+
+        return dotCount <= 6 && !dotStuffedGmail;
       }
     </script>
   </body>
