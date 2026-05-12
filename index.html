@@ -594,7 +594,7 @@
       }
 
       .faq-inner {
-        width: min(900px, 100%);
+        width: min(1080px, 100%);
         margin: 0 auto;
       }
 
@@ -677,11 +677,20 @@
       }
 
       .footer {
-        padding: 18px clamp(18px, 5vw, 64px);
+        padding: 22px clamp(18px, 5vw, 64px);
         color: var(--muted);
         background: #fff;
         border-top: 1px solid var(--line);
+        line-height: 1.5;
         text-align: center;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      .footer-copyright {
+        margin-top: 12px;
       }
 
       @media (max-width: 1180px) {
@@ -954,10 +963,11 @@
     </section>
 
     <footer class="footer">
-      Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
-      or certified personal trainer. For support, email help@fittxt.com.
-      <br />
-      Copyright 2026 ROI To The Sky, LLC
+      <p>
+        Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
+        or certified personal trainer. For support, email help@fittxt.com.
+      </p>
+      <p class="footer-copyright">Copyright &copy; 2026 ROI To The Sky, LLC. All rights reserved.</p>
     </footer>
 
     <script>
