@@ -6,7 +6,7 @@
     <title>Fit Txt | Fitness Accountability by Text Message</title>
     <meta
       name="description"
-      content="Fit Txt is text-message based fitness accountability with SMS check-ins, workout reminders, and follow-through. Try it free for 14 days, no card required."
+      content="Fit Txt is your fitness accountability buddy over text, with SMS check-ins, workout reminders, and follow-through. Try it free for 14 days, no card required."
     />
     <link rel="canonical" href="https://fittxt.com/" />
     <meta property="og:site_name" content="Fit Txt" />
@@ -14,14 +14,14 @@
     <meta property="og:title" content="Fit Txt | Fitness Accountability by Text Message" />
     <meta
       property="og:description"
-      content="Stay honest with your fitness goals through direct text-message accountability. No app to download, no login to remember."
+      content="Your fitness accountability buddy that checks in before you bail. No app to download, no login to remember."
     />
     <meta property="og:url" content="https://fittxt.com/" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Fit Txt | Fitness Accountability by Text Message" />
     <meta
       name="twitter:description"
-      content="Text-message based fitness accountability. Try Fit Txt free for 14 days, no card required."
+      content="Your fitness accountability buddy over text. Try Fit Txt free for 14 days, no card required."
     />
     <script type="application/ld+json">
       {
@@ -69,7 +69,7 @@
             "@id": "https://fittxt.com/#webpage",
             "url": "https://fittxt.com/",
             "name": "Fit Txt | Fitness Accountability by Text Message",
-            "description": "Fit Txt is text-message based fitness accountability with SMS check-ins, workout reminders, and follow-through. Try it free for 14 days, no card required.",
+            "description": "Fit Txt is your fitness accountability buddy over text, with SMS check-ins, workout reminders, and follow-through. Try it free for 14 days, no card required.",
             "isPartOf": {
               "@id": "https://fittxt.com/#website"
             },
@@ -108,6 +108,10 @@
       a {
         color: var(--green-dark);
         font-weight: 700;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       .header {
@@ -153,6 +157,39 @@
 
       .nav a {
         color: var(--muted);
+        text-decoration: none;
+      }
+
+      .cta-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .cta-button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        padding: 0 18px;
+        font-weight: 900;
+        text-decoration: none;
+        box-shadow: 0 10px 24px rgba(4, 158, 57, 0.18);
+      }
+
+      .cta-button:hover,
+      button:hover {
+        background: var(--green-dark);
+      }
+
+      .secondary-link {
+        color: var(--green-dark);
+        font-weight: 900;
         text-decoration: none;
       }
 
@@ -498,6 +535,110 @@
         text-align: center;
       }
 
+      .trust-note {
+        margin: -4px 0 0;
+        color: var(--green-dark);
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .sample-week {
+        padding: clamp(42px, 7vw, 82px) clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-top: 1px solid var(--line);
+      }
+
+      .sample-week-inner {
+        width: min(1080px, 100%);
+        margin: 0 auto;
+      }
+
+      .sample-week-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+        align-items: end;
+        gap: clamp(22px, 5vw, 48px);
+        margin-bottom: 26px;
+      }
+
+      .sample-week h2 {
+        max-width: 720px;
+        margin: 0;
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.03;
+      }
+
+      .sample-week-copy,
+      .sample-week-cta p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .sample-week-copy {
+        max-width: 660px;
+        margin: 16px 0 0;
+        font-size: 18px;
+      }
+
+      .sample-week-cta {
+        padding: 20px;
+        border: 1px solid #cbe6d7;
+        border-radius: 8px;
+        background: var(--soft);
+      }
+
+      .sample-week-cta p {
+        margin: 0;
+      }
+
+      .week-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .week-card {
+        display: grid;
+        align-content: start;
+        gap: 10px;
+        min-height: 250px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 18px;
+        box-shadow: 0 10px 24px rgba(23, 32, 27, 0.05);
+      }
+
+      .day-label {
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .week-card h3 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.15;
+      }
+
+      .week-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .sample-message {
+        align-self: end;
+        margin-top: 4px;
+        border-radius: 8px;
+        background: #e8f4ee;
+        color: var(--ink) !important;
+        padding: 10px 12px;
+        font-weight: 800;
+      }
+
       .pricing {
         padding: clamp(38px, 6vw, 72px) clamp(18px, 5vw, 64px);
         background: #fff;
@@ -585,6 +726,11 @@
       .price-row span {
         color: var(--muted);
         line-height: 1.45;
+      }
+
+      .price-cta {
+        width: 100%;
+        margin-top: 18px;
       }
 
       .faq {
@@ -676,6 +822,35 @@
         margin: 0;
       }
 
+      .closing-cta {
+        padding: clamp(38px, 6vw, 70px) clamp(18px, 5vw, 64px);
+        background: var(--soft);
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      .closing-cta-inner {
+        width: min(720px, 100%);
+        margin: 0 auto;
+      }
+
+      .closing-cta h2 {
+        margin: 0;
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.05;
+      }
+
+      .closing-cta p:not(.eyebrow) {
+        margin: 14px auto 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .closing-cta .cta-row {
+        justify-content: center;
+      }
+
       .footer {
         padding: 22px clamp(18px, 5vw, 64px);
         color: var(--muted);
@@ -741,6 +916,23 @@
           grid-template-columns: 1fr;
         }
 
+        .sample-week {
+          padding: 34px 16px 42px;
+        }
+
+        .sample-week-header {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .week-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .week-card {
+          min-height: auto;
+        }
+
         .faq summary {
           min-height: 54px;
           padding: 15px 16px;
@@ -757,7 +949,7 @@
       <div class="header-inner">
         <a class="logo" href="/" aria-label="Fit Txt home">FIT<span>TXT</span></a>
         <nav class="nav" aria-label="Site links">
-          <a href="/">Sign Up</a>
+          <a href="#signup">Sign Up</a>
           <a href="/how-it-works.html">How It Works</a>
           <a href="/privacy.html">Privacy</a>
           <a href="/terms.html">Terms</a>
@@ -786,19 +978,19 @@
           </div>
         </div>
         <p class="eyebrow">14-day free trial - no card required</p>
-        <h1>Health and fitness accountability that texts you back.</h1>
+        <h1>Your fitness accountability buddy that checks in before you bail.</h1>
         <p class="lede">
-          FitTxt is your personal accountability coach over text - simple, supportive, and always within reach. Set your health goals, get check-ins on your schedule, and stay on track without downloading another app.
+          Fit Txt is your personal accountability coach over text - simple, supportive, and always within reach. Set your health goals, get check-ins on your schedule, and stay on track without downloading another app.
         </p>
         <ul class="points">
           <li>Start with a 14-day free trial - no card required</li>
           <li>Daily motivation to achieve your health and fitness goals</li>
-          <li>Continue for $29/mo with our earlybird pricing; future price is $39/mo</li>
+          <li>Continue for $29/mo with early access pricing; future price is $39/mo</li>
         </ul>
       </section>
 
-      <section class="signup" aria-labelledby="signup-title">
-        <h2 id="signup-title">Join the beta</h2>
+      <section id="signup" class="signup" aria-labelledby="signup-title">
+        <h2 id="signup-title">Get started now</h2>
         <p>Try Fit Txt free for 14 days. No card required.</p>
         <form id="beta-form">
           <label class="signup-trap" aria-hidden="true">
@@ -830,6 +1022,7 @@
             Email
             <input name="email" type="email" autocomplete="email" />
           </label>
+          <p class="trust-note">No spam. STOP anytime. We don't sell your number.</p>
           <label class="checkbox">
             <input name="smsConsent" type="checkbox" required />
             <span id="consent-text">
@@ -842,7 +1035,7 @@
               <a href="/privacy.html" target="_blank" rel="noreferrer">Privacy Policy</a>.
             </span>
           </label>
-          <button type="submit">Join the beta</button>
+          <button type="submit">Sign me up</button>
           <p class="form-note">
             Fit Txt provides accountability support, not medical, dietetic, or personal training
             advice.
@@ -852,6 +1045,93 @@
       </section>
     </main>
 
+    <section class="sample-week" aria-labelledby="sample-week-title">
+      <div class="sample-week-inner">
+        <div class="sample-week-header">
+          <div>
+            <p class="eyebrow">A week with Fit Txt</p>
+            <h2 id="sample-week-title">Small check-ins, timed for the moments consistency usually slips.</h2>
+            <p class="sample-week-copy">
+              Fit Txt learns your goals, schedule, and accountability style, then keeps the next
+              useful action in front of you. The week feels less like managing another app and more
+              like having someone remember what you said you wanted.
+            </p>
+          </div>
+          <aside class="sample-week-cta" aria-label="Start Fit Txt">
+            <p>
+              Start with 14 days free. After that, we will text you a link if you want to
+              continue. You will not be charged unless you choose a plan.
+            </p>
+            <div class="cta-row">
+              <a class="cta-button" href="#signup">Sign me up</a>
+              <a class="secondary-link" href="/how-it-works.html">See how it works</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="week-grid">
+          <article class="week-card">
+            <span class="day-label">Monday</span>
+            <h3>Set the target</h3>
+            <p>
+              Fit Txt confirms the goal, the workout windows, and the thing most likely to get in
+              the way.
+            </p>
+            <p class="sample-message">"You said three workouts this week. Which days are locked in?"</p>
+          </article>
+
+          <article class="week-card">
+            <span class="day-label">Tuesday</span>
+            <h3>Catch the excuse early</h3>
+            <p>
+              If your plan is to train after work, Fit Txt can check in before the decision gets
+              fuzzy.
+            </p>
+            <p class="sample-message">"It's almost after-work workout time. You going, or are we negotiating?"</p>
+          </article>
+
+          <article class="week-card">
+            <span class="day-label">Wednesday</span>
+            <h3>Keep food visible</h3>
+            <p>
+              Meal plans, protein targets, late-night snacking, or whatever nutrition behavior you
+              are improving stays on your radar.
+            </p>
+            <p class="sample-message">"What's for dinner tonight? If you need an idea, let me know."</p>
+          </article>
+
+          <article class="week-card">
+            <span class="day-label">Thursday</span>
+            <h3>Reset fast</h3>
+            <p>
+              Missed plans do not need a guilt spiral. Fit Txt brings you back to the next useful
+              action.
+            </p>
+            <p class="sample-message">"You missed your step goal yesterday. It happens. Get back on track today."</p>
+          </article>
+
+          <article class="week-card">
+            <span class="day-label">Friday</span>
+            <h3>Review honestly</h3>
+            <p>
+              A quick scorecard helps you see what happened, what worked, and what should change
+              next week.
+            </p>
+            <p class="sample-message">"Workouts done, latest weigh-in, and one thing to fix next week."</p>
+          </article>
+
+          <article class="week-card">
+            <span class="day-label">Weekend</span>
+            <h3>Plan before Monday</h3>
+            <p>
+              A small weekend check-in turns vague intentions into a plan that is easier to follow.
+            </p>
+            <p class="sample-message">"Pick your workout days now. Future you does not get to wing it."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="pricing" aria-labelledby="pricing-title">
       <div class="pricing-inner">
         <div>
@@ -859,8 +1139,8 @@
           <h2 id="pricing-title">Try it first. Keep it when the follow-through starts working.</h2>
           <p class="pricing-copy">
             Fit Txt is designed to be easy to start and easy to stick with: no app, no login,
-            and no card needed for the trial. After 14 days, continuing unlocks higher
-            usage limits and unlocks human oversight and accountability.
+            and no card needed for the trial. After 14 days, we will text you a link if you
+            want to continue. You will not be charged unless you choose a plan.
           </p>
           <ul class="pricing-list">
             <li>10 AI replies per day during the trial, 25 per day when you continue</li>
@@ -876,12 +1156,13 @@
           </div>
           <div class="price-row">
             <strong>$29/mo</strong>
-            <span>Beta users lock in this price for life</span>
+            <span>Early access users lock in this price for life</span>
           </div>
           <div class="price-row">
             <strong>$39/mo</strong>
-            <span>Future standard monthly price after the beta</span>
+            <span>Future standard monthly price after early access</span>
           </div>
+          <a class="cta-button price-cta" href="#signup">Sign me up</a>
         </aside>
       </div>
     </section>
@@ -912,8 +1193,9 @@
             <div class="faq-answer">
               <p>
                 You can try Fit Txt free for 14 days with no card required. Trial users get
-                10 AI replies per day. If you continue after the trial, early access users pay
-                $29/month, and the future standard price will be $39/month.
+                10 AI replies per day. After 14 days, we will text you a link if you want to
+                continue. You will not be charged unless you choose a plan. Early access users
+                pay $29/month, and the future standard price will be $39/month.
               </p>
             </div>
           </details>
@@ -932,7 +1214,7 @@
           <details>
             <summary>Can I stop the messages?</summary>
             <div class="faq-answer">
-              <p>Yes. Reply STOP at any time. You can also reply HELP for support details. If you have an active subscription, replying STOP will end all future charges - and messsages.</p>
+              <p>Yes. Reply STOP at any time. You can also reply HELP for support details. If you have an active subscription, replying STOP will end all future charges and messages.</p>
             </div>
           </details>
 
@@ -960,6 +1242,20 @@
       </div>
     </section>
 
+    <section class="closing-cta" aria-labelledby="closing-cta-title">
+      <div class="closing-cta-inner">
+        <p class="eyebrow">Ready when you are</p>
+        <h2 id="closing-cta-title">Get your first accountability text.</h2>
+        <p>
+          Try Fit Txt free for 14 days. No card required, no surprise charge, and no app to
+          download.
+        </p>
+        <div class="cta-row">
+          <a class="cta-button" href="#signup">Sign me up</a>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <p>
         Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
@@ -970,7 +1266,7 @@
 
     <script>
       const API_BASE = "https://fit-txt-production.up.railway.app";
-      const SIGNUP_QUALITY_MESSAGE = "Please use your real name and email for beta access.";
+      const SIGNUP_QUALITY_MESSAGE = "Please use your real name and email to start your trial.";
       const form = document.querySelector("#beta-form");
       const status = document.querySelector("#status");
       const phoneInput = form.querySelector('input[name="phone"]');
@@ -1001,7 +1297,7 @@
           if (!response.ok) throw new Error(data.error || "Signup failed");
           form.reset();
           status.className = "status success";
-          status.textContent = "You're in the Fit Txt beta. Check your phone to start your 14-day trial.";
+          status.textContent = "You're signed up. Check your phone to start your 14-day trial.";
         } catch (error) {
           status.textContent = error.message;
         }

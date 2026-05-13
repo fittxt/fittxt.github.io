@@ -1,19 +1,19 @@
 # Fit Txt
 
-Fit Txt is a private beta SMS fitness accountability service for people in the United States and Canada. It helps users stay honest with health and fitness goals through direct text-message check-ins, reminders, follow-up, and accountability support.
+Fit Txt is an early access SMS fitness accountability service for people in the United States and Canada. It helps users stay honest with health and fitness goals through direct text-message check-ins, reminders, follow-up, and accountability support.
 
 Fit Txt does not provide medical care, diagnosis, treatment, dietetic advice, or certified personal training. Users should consult qualified professionals for health, diet, injury, or training decisions.
 
 ## Key Pages
 
-- https://fittxt.com/ - Beta signup for Fit Txt, a text-message fitness accountability service with a 14-day free trial.
+- https://fittxt.com/ - Signup for Fit Txt, a text-message fitness accountability service with a 14-day free trial.
 - https://fittxt.com/how-it-works.html - Explains how Fit Txt uses SMS check-ins, AI-powered accountability, optional human support, and STOP/HELP controls.
-- https://fittxt.com/privacy.html - Privacy policy for Fit Txt beta signup, SMS messages, support, and service providers.
+- https://fittxt.com/privacy.html - Privacy policy for Fit Txt signup, SMS messages, support, and service providers.
 - https://fittxt.com/terms.html - Terms of service, text-message controls, and health disclaimers.
 
 ## Core Facts
 
-- Fit Txt is currently a private beta.
+- Fit Txt is currently in early access.
 - Fit Txt is designed for SMS/MMS accountability, not a downloadable mobile app.
 - Fit Txt works in the United States and Canada.
 - Users can reply STOP to unsubscribe from messages and HELP for support details.
