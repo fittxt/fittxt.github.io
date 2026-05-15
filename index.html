@@ -1024,15 +1024,21 @@
           </label>
           <p class="trust-note">No spam. STOP anytime. We don't sell your number.</p>
           <label class="checkbox">
-            <input name="smsConsent" type="checkbox" required />
-            <span id="consent-text">
-              I agree to receive recurring automated SMS/MMS messages from Fit Txt about
-              fitness accountability, check-ins, coaching reminders, signup/payment updates,
-              and related service messages at the phone number I provide. Message frequency
-              varies. Message and data rates may apply. Reply STOP to unsubscribe and HELP for
-              help. Consent is not a condition of purchase. I agree to the
-              <a href="/terms.html" target="_blank" rel="noreferrer">Terms</a> and
+            <input name="termsAccepted" type="checkbox" required />
+            <span id="terms-consent-text">
+              I agree to the Fit Txt
+              <a href="/terms.html" target="_blank" rel="noreferrer">Terms of Service</a> and
               <a href="/privacy.html" target="_blank" rel="noreferrer">Privacy Policy</a>.
+            </span>
+          </label>
+          <label class="checkbox">
+            <input name="smsConsent" type="checkbox" required />
+            <span id="sms-consent-text">
+              I agree to receive recurring automated SMS/MMS messages from Fit Txt, a product of
+              ROI To The Sky, LLC, about fitness accountability check-ins, coaching reminders,
+              signup/payment updates, and related service messages at the mobile number I provide.
+              Message frequency varies. Message and data rates may apply. Reply STOP to
+              unsubscribe. Reply HELP for help. Consent is not a condition of purchase.
             </span>
           </label>
           <button type="submit">Sign me up</button>
@@ -1279,8 +1285,10 @@
         status.textContent = "";
 
         const values = Object.fromEntries(new FormData(form).entries());
+        values.termsAccepted = Boolean(values.termsAccepted);
         values.smsConsent = Boolean(values.smsConsent);
-        values.consentText = document.querySelector("#consent-text").innerText.trim();
+        values.termsText = checkboxText("#terms-consent-text");
+        values.smsConsentText = checkboxText("#sms-consent-text");
 
         try {
           const signupQualityError = validateSignupQuality(values);
@@ -1305,6 +1313,10 @@
         const digits = String(value || "").replace(/\D/g, "");
         if (digits.length === 11 && digits.startsWith("1")) return digits.slice(1, 11);
         return digits.slice(0, 10);
+      }
+
+      function checkboxText(selector) {
+        return document.querySelector(selector).innerText.trim().replace(/\s+/g, " ");
       }
 
       function formatPhoneForDisplay(value) {
