@@ -183,7 +183,7 @@
       }
 
       .cta-button:hover,
-      button:hover {
+      button:not(:disabled):hover {
         background: var(--green-dark);
       }
 
@@ -517,10 +517,20 @@
         cursor: pointer;
       }
 
+      button:disabled {
+        background: #92d8aa;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
       .status {
-        min-height: 20px;
-        color: #bd4b42;
-        font-size: 13px;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
       }
 
       .status.success {
@@ -541,6 +551,82 @@
         font-size: 12px;
         font-weight: 800;
         line-height: 1.45;
+      }
+
+      .signup-dialog {
+        width: min(430px, calc(100% - 32px));
+        border: 0;
+        border-radius: 8px;
+        padding: 0;
+        color: var(--ink);
+        background: transparent;
+      }
+
+      .signup-dialog::backdrop {
+        background: rgba(23, 32, 27, 0.48);
+        backdrop-filter: blur(3px);
+      }
+
+      .signup-dialog-card {
+        display: grid;
+        grid-template-columns: 46px minmax(0, 1fr);
+        gap: 16px;
+        border: 1px solid #cbe6d7;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 22px 64px rgba(23, 32, 27, 0.2);
+        padding: 24px;
+      }
+
+      .signup-dialog-mark {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: #e8f4ee;
+        color: var(--green-dark);
+        font-weight: 900;
+      }
+
+      .signup-dialog[data-state="pending"] .signup-dialog-mark {
+        color: var(--green);
+      }
+
+      .signup-dialog[data-state="error"] .signup-dialog-mark {
+        background: #fff0ee;
+        color: #bd4b42;
+      }
+
+      .signup-dialog-content {
+        min-width: 0;
+      }
+
+      .signup-dialog-content h3 {
+        margin: 0;
+        font-size: 24px;
+        line-height: 1.12;
+      }
+
+      .signup-dialog-content p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .signup-dialog-actions {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 18px;
+      }
+
+      .signup-dialog-close {
+        min-width: 96px;
+        padding: 0 16px;
+      }
+
+      .signup-dialog-close[hidden] {
+        display: none;
       }
 
       .sample-week {
@@ -1041,13 +1127,34 @@
               unsubscribe. Reply HELP for help. Consent is not a condition of purchase.
             </span>
           </label>
-          <button type="submit">Sign me up</button>
+          <button id="signup-submit" type="submit">Sign me up</button>
           <p class="form-note">
             Fit Txt provides accountability support, not medical, dietetic, or personal training
             advice.
           </p>
           <div id="status" class="status" role="status" aria-live="polite"></div>
         </form>
+        <dialog
+          id="signup-dialog"
+          class="signup-dialog"
+          aria-labelledby="signup-dialog-title"
+          aria-describedby="signup-dialog-message"
+        >
+          <div class="signup-dialog-card">
+            <div class="signup-dialog-mark" id="signup-dialog-symbol" aria-hidden="true">...</div>
+            <div class="signup-dialog-content">
+              <h3 id="signup-dialog-title">Sending your signup</h3>
+              <p id="signup-dialog-message">
+                Hang tight. We are starting your Fit Txt trial now.
+              </p>
+              <div class="signup-dialog-actions">
+                <button id="signup-dialog-close" class="signup-dialog-close" type="button" hidden>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </dialog>
       </section>
     </main>
 
@@ -1273,17 +1380,44 @@
       const phoneInput = form.querySelector('input[name="phone"]');
       const emailInput = form.querySelector('input[name="email"]');
       const smsConsentInput = form.querySelector('input[name="smsConsent"]');
+      const submitButton = document.querySelector("#signup-submit");
+      const signupDialog = document.querySelector("#signup-dialog");
+      const signupDialogTitle = document.querySelector("#signup-dialog-title");
+      const signupDialogMessage = document.querySelector("#signup-dialog-message");
+      const signupDialogSymbol = document.querySelector("#signup-dialog-symbol");
+      const signupDialogClose = document.querySelector("#signup-dialog-close");
+      let isSubmitting = false;
+      let signupComplete = false;
+      let lastSignupMessage = "";
 
       phoneInput.addEventListener("input", () => {
         phoneInput.value = formatPhoneForDisplay(phoneInput.value);
       });
       smsConsentInput.addEventListener("change", syncSignupRequirements);
+      signupDialogClose.addEventListener("click", closeSignupDialog);
+      signupDialog.addEventListener("cancel", (event) => {
+        if (signupDialog.dataset.state === "pending") event.preventDefault();
+      });
       syncSignupRequirements();
 
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
+        if (signupComplete) {
+          showSignupDialog("success", "You're signed up", lastSignupMessage);
+          return;
+        }
+        if (isSubmitting) {
+          showSignupDialog(
+            "pending",
+            "Sending your signup",
+            "Hang tight. We are starting your Fit Txt trial now.",
+          );
+          return;
+        }
+
         status.className = "status";
         status.textContent = "";
+        beginSignupSubmit();
 
         const values = Object.fromEntries(new FormData(form).entries());
         values.termsAccepted = Boolean(values.termsAccepted);
@@ -1308,15 +1442,71 @@
           });
           const data = await response.json();
           if (!response.ok) throw new Error(data.error || "Signup failed");
-          form.reset();
+          lastSignupMessage =
+            data.message ||
+            (values.smsConsent
+              ? "Thanks. Check your texts for the welcome message from Fit Txt."
+              : "Thanks. Check your email for next steps from Fit Txt.");
+          signupComplete = true;
           syncSignupRequirements();
           status.className = "status success";
-          status.textContent =
-            data.message || "Thanks. Check your email for next steps from Fit Txt.";
+          status.textContent = lastSignupMessage;
+          finishSignupSubmit("Signed up", true);
+          showSignupDialog("success", "You're signed up", lastSignupMessage);
         } catch (error) {
-          status.textContent = error.message;
+          const message = error.message || "Signup failed. Please try again.";
+          status.textContent = message;
+          finishSignupSubmit("Sign me up", false);
+          showSignupDialog("error", "We couldn't finish signup", message);
         }
       });
+
+      function beginSignupSubmit() {
+        isSubmitting = true;
+        form.setAttribute("aria-busy", "true");
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        showSignupDialog(
+          "pending",
+          "Sending your signup",
+          "Hang tight. We are starting your Fit Txt trial now.",
+        );
+      }
+
+      function finishSignupSubmit(buttonText, keepDisabled) {
+        isSubmitting = false;
+        form.removeAttribute("aria-busy");
+        submitButton.textContent = buttonText;
+        submitButton.disabled = keepDisabled;
+      }
+
+      function showSignupDialog(state, title, message) {
+        signupDialog.dataset.state = state;
+        signupDialogTitle.textContent = title;
+        signupDialogMessage.textContent = message;
+        signupDialogSymbol.textContent = state === "success" ? "OK" : state === "error" ? "!" : "...";
+        signupDialogClose.hidden = state === "pending";
+
+        if (!signupDialog.open) {
+          if (typeof signupDialog.showModal === "function") {
+            signupDialog.showModal();
+          } else {
+            signupDialog.setAttribute("open", "");
+          }
+        }
+
+        if (state !== "pending") {
+          signupDialogClose.focus({ preventScroll: true });
+        }
+      }
+
+      function closeSignupDialog() {
+        if (typeof signupDialog.close === "function") {
+          signupDialog.close();
+        } else {
+          signupDialog.removeAttribute("open");
+        }
+      }
 
       function syncSignupRequirements() {
         phoneInput.required = smsConsentInput.checked;
