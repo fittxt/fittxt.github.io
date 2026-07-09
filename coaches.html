@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fit Txt for Coaches | Text Clients Without Giving Out Your Number</title>
+    <meta
+      name="description"
+      content="Fit Txt for Coaches helps trainers, fitness influencers, and gyms text clients, send reminders, broadcast updates, and optionally use AI accountability without sharing a personal phone number."
+    />
+    <link rel="canonical" href="https://fittxt.com/coaches.html" />
+    <link rel="icon" type="image/png" sizes="224x224" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta property="og:site_name" content="Fit Txt" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fit Txt for Coaches" />
+    <meta
+      property="og:description"
+      content="A shared texting platform for trainers, influencers, and gyms that want 1:1 client accountability by SMS."
+    />
+    <meta property="og:url" content="https://fittxt.com/coaches.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Fit Txt for Coaches" />
+    <meta
+      name="twitter:description"
+      content="Text clients, schedule reminders, broadcast updates, and turn AI accountability on when you want it."
+    />
+    <style>
+      :root {
+        --green: #02bc42;
+        --green-dark: #049e39;
+        --ink: #17201b;
+        --muted: #66746d;
+        --line: #dbe3dd;
+        --surface: #ffffff;
+        --soft: #f5f8f6;
+        --accent: #145c3a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #fff;
+        font-family:
+          Lato, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: var(--green-dark);
+        font-weight: 800;
+      }
+
+      .header {
+        padding: 22px clamp(18px, 5vw, 64px);
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 26px;
+        font-style: italic;
+        font-weight: 900;
+      }
+
+      .logo span {
+        margin-left: 4px;
+        padding: 2px 9px 4px;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-style: normal;
+      }
+
+      .nav {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .hero {
+        background: var(--soft);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-inner {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        min-height: calc(100vh - 210px);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(310px, 420px);
+        align-items: center;
+        gap: clamp(32px, 6vw, 72px);
+        padding: 48px 0;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(44px, 7vw, 78px);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .lede {
+        max-width: 680px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: clamp(18px, 2.4vw, 23px);
+        line-height: 1.45;
+      }
+
+      .cta-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .cta-button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        padding: 0 18px;
+        font-weight: 900;
+        text-decoration: none;
+        box-shadow: 0 10px 24px rgba(4, 158, 57, 0.18);
+      }
+
+      .secondary-link {
+        color: var(--green-dark);
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .coach-visual {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 18px 50px rgba(20, 92, 58, 0.14);
+        overflow: hidden;
+      }
+
+      .visual-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .visual-top strong,
+      .visual-top span {
+        display: block;
+      }
+
+      .visual-top span {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .visual-badge {
+        align-self: flex-start;
+        border-radius: 999px;
+        background: #e7f8ed;
+        color: var(--accent);
+        padding: 6px 10px;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .thread-list {
+        display: grid;
+        gap: 1px;
+        background: var(--line);
+      }
+
+      .thread-item {
+        display: grid;
+        grid-template-columns: 38px 1fr auto;
+        gap: 12px;
+        align-items: center;
+        background: #fff;
+        padding: 14px 16px;
+      }
+
+      .avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: inline-grid;
+        place-items: center;
+        background: var(--soft);
+        color: var(--accent);
+        font-weight: 900;
+      }
+
+      .thread-item strong,
+      .thread-item span {
+        display: block;
+      }
+
+      .thread-item span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      .visual-actions {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 14px 16px 16px;
+      }
+
+      .visual-actions span {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 9px 8px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .section {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 70px 0;
+      }
+
+      .section-header {
+        max-width: 760px;
+        margin-bottom: 28px;
+      }
+
+      .section-header h2 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 48px);
+        line-height: 1.05;
+      }
+
+      .section-header p {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .feature-grid,
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .feature,
+      .price-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 22px;
+      }
+
+      .feature h3,
+      .price-card h3 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .feature p,
+      .price-card p,
+      .price-card li {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin: 18px 0 8px;
+      }
+
+      .price strong {
+        font-size: 42px;
+        line-height: 1;
+      }
+
+      .price span {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .price-card ul {
+        margin: 18px 0 0;
+        padding-left: 20px;
+      }
+
+      .highlight {
+        border-color: var(--green);
+        box-shadow: 0 12px 30px rgba(2, 188, 66, 0.12);
+      }
+
+      .band {
+        background: var(--soft);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .footer {
+        padding: 32px clamp(18px, 5vw, 64px);
+        background: var(--ink);
+        color: #dfe9e3;
+      }
+
+      .footer p {
+        width: min(960px, 100%);
+        margin: 0 auto 10px;
+        line-height: 1.55;
+      }
+
+      .footer-copyright {
+        color: #aebbb4;
+        font-size: 14px;
+      }
+
+      @media (max-width: 840px) {
+        .header-inner,
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .feature-grid,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-inner {
+          min-height: auto;
+          padding: 42px 0;
+        }
+
+        h1 {
+          font-size: clamp(38px, 12vw, 58px);
+        }
+      }
+
+      @media (max-width: 520px) {
+        .visual-actions {
+          grid-template-columns: 1fr;
+        }
+
+        .thread-item {
+          grid-template-columns: 34px 1fr;
+        }
+
+        .status-dot {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="/" aria-label="Fit Txt home">FIT<span>TXT</span></a>
+        <nav class="nav" aria-label="Site links">
+          <a href="/#signup">Sign Up</a>
+          <a href="/how-it-works.html">How It Works</a>
+          <a href="/coaches.html">For Coaches</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">For coaches, trainers, influencers, and gyms</p>
+            <h1>Text every client from one coaching inbox.</h1>
+            <p class="lede">
+              Fit Txt gives you a shared business texting platform for 1:1 client
+              accountability, scheduled reminders, broadcasts, and optional AI support without
+              handing out your personal phone number.
+            </p>
+            <div class="cta-row">
+              <a class="cta-button" href="mailto:help@fittxt.com?subject=Fit%20Txt%20for%20Coaches">Start with Fit Txt</a>
+              <a class="secondary-link" href="#pricing">See pricing</a>
+            </div>
+          </div>
+          <div class="coach-visual" aria-label="Coach inbox preview">
+            <div class="visual-top">
+              <div>
+                <strong>Coach Inbox</strong>
+                <span>Clients, reminders, broadcasts, and AI controls</span>
+              </div>
+              <span class="visual-badge">AI off by default</span>
+            </div>
+            <div class="thread-list">
+              <div class="thread-item">
+                <span class="avatar">MR</span>
+                <div>
+                  <strong>Maya R.</strong>
+                  <span>Lunch check-in scheduled for 1:00 PM</span>
+                </div>
+                <span class="status-dot"></span>
+              </div>
+              <div class="thread-item">
+                <span class="avatar">DJ</span>
+                <div>
+                  <strong>Dante J.</strong>
+                  <span>Replied: Finished lift. Need cardio reminder.</span>
+                </div>
+                <span class="status-dot"></span>
+              </div>
+              <div class="thread-item">
+                <span class="avatar">LP</span>
+                <div>
+                  <strong>Lena P.</strong>
+                  <span>Broadcast received: Saturday class moved to 9.</span>
+                </div>
+                <span class="status-dot"></span>
+              </div>
+            </div>
+            <div class="visual-actions">
+              <span>1:1 Texts</span>
+              <span>Reminders</span>
+              <span>Broadcasts</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>Built for real client follow-through.</h2>
+          <p>
+            Coaches can keep the human relationship in front while Fit Txt handles the repetitive
+            texting work that helps clients stay consistent between sessions.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>One coaching number</h3>
+            <p>Keep client conversations in Fit Txt instead of your personal phone. Coaches can reply 1:1 from the admin inbox.</p>
+          </article>
+          <article class="feature">
+            <h3>Reminders and broadcasts</h3>
+            <p>Schedule individual reminders, recurring check-ins, and group announcements for workouts, nutrition, events, and class updates.</p>
+          </article>
+          <article class="feature">
+            <h3>Optional AI accountability</h3>
+            <p>AI responses are disabled by default. Turn them on when you want Fit Txt to answer clients and help with reminder requests.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band" id="pricing">
+        <div class="section">
+          <div class="section-header">
+            <h2>Simple coach pricing.</h2>
+            <p>
+              Every coach tier includes Fit Txt's core texting, reminders, broadcasts, admin tools,
+              and optional AI features. Start with the tier that matches your client list.
+            </p>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card">
+              <h3>Coach - Starter</h3>
+              <div class="price"><strong>$39</strong><span>/month</span></div>
+              <p>For independent coaches starting with a smaller client roster.</p>
+              <ul>
+                <li>Up to 10 active clients</li>
+                <li>1 coach account</li>
+                <li>1:1 client texting</li>
+                <li>Reminders, broadcasts, and optional AI</li>
+              </ul>
+            </article>
+            <article class="price-card highlight">
+              <h3>Coach - Pro</h3>
+              <div class="price"><strong>$89</strong><span>/month</span></div>
+              <p>For trainers, creators, and online coaches with a growing client base.</p>
+              <ul>
+                <li>Up to 50 active clients</li>
+                <li>1 coach account</li>
+                <li>Client assignment and admin inbox</li>
+                <li>All Fit Txt features included</li>
+              </ul>
+            </article>
+            <article class="price-card">
+              <h3>Coach - Studio</h3>
+              <div class="price"><strong>$299</strong><span>/month</span></div>
+              <p>For gyms, studios, and locations that need multiple coaches under one account.</p>
+              <ul>
+                <li>Multiple included coach accounts</li>
+                <li>Studio admin controls</li>
+                <li>Shared client texting workflows</li>
+                <li>All Fit Txt features included</li>
+              </ul>
+            </article>
+          </div>
+          <div class="cta-row">
+            <a class="cta-button" href="mailto:help@fittxt.com?subject=Fit%20Txt%20Coach%20Plan">Ask about coach access</a>
+            <a class="secondary-link" href="/how-it-works.html">How Fit Txt works</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Fit Txt is not medical care and does not replace a doctor, registered dietician, therapist,
+        or certified personal trainer. For support, email help@fittxt.com.
+      </p>
+      <p class="footer-copyright">Copyright &copy; 2026 ROI To The Sky, LLC. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
