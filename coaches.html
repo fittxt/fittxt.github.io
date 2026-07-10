@@ -315,6 +315,14 @@ permalink: /coaches/
         line-height: 1.35;
       }
 
+      .signup-plan-price {
+        margin-bottom: -4px;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 900;
+        line-height: 1.2;
+      }
+
       .signup-consent {
         display: grid;
         grid-template-columns: auto 1fr;
@@ -773,8 +781,8 @@ permalink: /coaches/
       <section class="signup-card">
         <button class="signup-close" type="button" aria-label="Close signup form" data-close-coach-signup>&times;</button>
         <p class="eyebrow">Fit Txt for Coaches</p>
-        <h2 id="coach-signup-title">Start your 14-day free trial</h2>
-        <p class="signup-intro">No card required. Choose a plan now; subscribe only after your trial ends.</p>
+        <h2 id="coach-signup-title">Start your free trial</h2>
+        <p class="signup-intro">No card required to begin your trial. Choose a plan now, and subscribe only after your trial ends.</p>
         <form id="coach-signup-form" class="signup-form">
           <label>Name <input name="name" required autocomplete="name" /></label>
           <label>Email <input name="email" type="email" required autocomplete="email" /></label>
@@ -785,16 +793,19 @@ permalink: /coaches/
               <label class="signup-plan">
                 <input name="coachTier" type="radio" value="starter" checked />
                 <span class="signup-plan-name">Starter</span>
+                <span class="signup-plan-price">$39/month</span>
                 <span class="signup-plan-detail">Up to 10 clients</span>
               </label>
               <label class="signup-plan">
                 <input name="coachTier" type="radio" value="pro" />
                 <span class="signup-plan-name">Pro</span>
+                <span class="signup-plan-price">$89/month</span>
                 <span class="signup-plan-detail">Up to 50 clients</span>
               </label>
               <label class="signup-plan">
                 <input name="coachTier" type="radio" value="studio" />
                 <span class="signup-plan-name">Studio</span>
+                <span class="signup-plan-price">$299/month</span>
                 <span class="signup-plan-detail">Multiple coaches</span>
               </label>
             </div>
