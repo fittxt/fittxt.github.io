@@ -1,5 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Fit Txt">
-  <title>Fit Txt</title>
-  <rect width="512" height="512" rx="96" fill="#02bc42"/>
-  <path fill="#17201b" d="M112 132h160v58h-98v55h88v56h-88v113h-62V132Zm188 0h154v58h-48v224h-62V190h-44v-58Z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 502.6 502.6">
+  <!-- Generator: Adobe Illustrator 30.6.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 109)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient);
+      }
+
+      .st1 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="30.3" y1="156.2" x2="491.9" y2="354.9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2db24c"/>
+      <stop offset=".3" stop-color="#2bad4c"/>
+      <stop offset=".6" stop-color="#28a04e"/>
+      <stop offset=".9" stop-color="#228a51"/>
+      <stop offset="1" stop-color="#218752"/>
+    </linearGradient>
+  </defs>
+  <rect class="st0" width="502.6" height="502.6"/>
+  <g>
+    <path class="st1" d="M249.8,159.1l-8.6,39.8h-85.4l-7.2,33.3h83.5l-8.3,37.7h-83.8l-15.2,75.5h-57.5l39.8-186.2h142.9Z"/>
+    <path class="st1" d="M443.5,159.1l-9.5,45.7h-60.5l-30.4,140.5h-57.8l30.2-140.5h-57.8l9.7-45.7h176.1Z"/>
+  </g>
 </svg>
