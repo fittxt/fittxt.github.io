@@ -241,6 +241,80 @@ permalink: /coaches/
         outline: 3px solid rgba(2, 188, 66, 0.16);
       }
 
+      .plan-picker {
+        min-width: 0;
+        margin: 2px 0 0;
+        border: 0;
+        padding: 0;
+      }
+
+      .plan-picker legend {
+        margin-bottom: 7px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .plan-options {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .signup-form .signup-plan {
+        position: relative;
+        display: grid;
+        gap: 7px;
+        min-width: 0;
+        color: var(--muted);
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .signup-plan input {
+        position: absolute;
+        width: 1px;
+        min-height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      .signup-plan-name {
+        min-height: 44px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 9px 8px;
+        color: var(--ink);
+        background: #fff;
+        font-size: 15px;
+        font-weight: 900;
+        transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
+      }
+
+      .signup-plan input:checked + .signup-plan-name {
+        border-color: var(--green);
+        color: #fff;
+        background: var(--green);
+        box-shadow: 0 8px 18px rgba(4, 158, 57, 0.18);
+      }
+
+      .signup-plan input:focus-visible + .signup-plan-name {
+        outline: 3px solid rgba(2, 188, 66, 0.2);
+        outline-offset: 2px;
+      }
+
+      .signup-plan-detail {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
       .signup-consent {
         display: grid;
         grid-template-columns: auto 1fr;
@@ -705,14 +779,26 @@ permalink: /coaches/
           <label>Name <input name="name" required autocomplete="name" /></label>
           <label>Email <input name="email" type="email" required autocomplete="email" /></label>
           <label>Password <input name="password" type="password" minlength="8" required autocomplete="new-password" /></label>
-          <label>
-            Plan
-            <select name="coachTier">
-              <option value="starter">Starter — $39/month, up to 10 clients</option>
-              <option value="pro">Pro — $89/month, up to 50 clients</option>
-              <option value="studio">Studio — $299/month, multiple coaches</option>
-            </select>
-          </label>
+          <fieldset class="plan-picker">
+            <legend>Plan</legend>
+            <div class="plan-options">
+              <label class="signup-plan">
+                <input name="coachTier" type="radio" value="starter" checked />
+                <span class="signup-plan-name">Starter</span>
+                <span class="signup-plan-detail">Up to 10 clients</span>
+              </label>
+              <label class="signup-plan">
+                <input name="coachTier" type="radio" value="pro" />
+                <span class="signup-plan-name">Pro</span>
+                <span class="signup-plan-detail">Up to 50 clients</span>
+              </label>
+              <label class="signup-plan">
+                <input name="coachTier" type="radio" value="studio" />
+                <span class="signup-plan-name">Studio</span>
+                <span class="signup-plan-detail">Multiple coaches</span>
+              </label>
+            </div>
+          </fieldset>
           <label class="signup-consent">
             <input name="termsAccepted" type="checkbox" required />
             <span>I agree to the Fit Txt <a href="/terms" target="_blank" rel="noreferrer">Terms</a> and <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.</span>
