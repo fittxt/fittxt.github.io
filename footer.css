@@ -1,0 +1,27 @@
+.footer {
+  padding: clamp(36px, 5vw, 48px) clamp(18px, 5vw, 64px) 26px;
+  color: var(--muted);
+  background: #fff;
+  border-top: 1px solid var(--line);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px !important;
+}
+
+.footer-links a {
+  color: inherit;
+}
+
+.footer .footer-copyright {
+  margin-top: 18px;
+}
