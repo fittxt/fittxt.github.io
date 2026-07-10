@@ -590,14 +590,26 @@ permalink: /coaches/
       }
 
       @media (max-width: 840px) {
+        .header {
+          padding-right: 0;
+          padding-left: 0;
+        }
+
         .header-inner,
         .hero-inner {
           grid-template-columns: 1fr;
         }
 
         .header-inner {
-          align-items: flex-start;
-          flex-direction: column;
+          width: 100%;
+          display: grid;
+          justify-items: center;
+          text-align: center;
+        }
+
+        .nav {
+          width: 100%;
+          justify-content: center;
         }
 
         .feature-grid,
