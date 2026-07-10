@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 110" role="img" aria-labelledby="title">
+  <title id="title">Fit Txt</title>
+  <rect x="128" y="12" width="216" height="86" rx="43" fill="#02bc42"/>
+  <text x="4" y="82" fill="#17201b" font-family="Arial Black, Arial, sans-serif" font-size="76" font-style="italic" font-weight="900" letter-spacing="-6">FIT</text>
+  <text x="153" y="78" fill="#ffffff" font-family="Arial Black, Arial, sans-serif" font-size="61" font-weight="900" letter-spacing="-3">TXT</text>
+</svg>
