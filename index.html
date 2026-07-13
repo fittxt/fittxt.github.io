@@ -737,6 +737,92 @@
         border-top: 1px solid var(--line);
       }
 
+      .proof {
+        padding: clamp(38px, 6vw, 72px) clamp(18px, 5vw, 64px);
+        background: var(--soft);
+        border-top: 1px solid var(--line);
+      }
+
+      .proof-inner {
+        width: min(1080px, 100%);
+        margin: 0 auto;
+      }
+
+      .proof-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+        align-items: end;
+        gap: clamp(22px, 5vw, 48px);
+      }
+
+      .proof h2 {
+        max-width: 680px;
+        margin: 0;
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.03;
+      }
+
+      .proof-intro,
+      .proof-note {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .proof-intro {
+        max-width: 640px;
+        margin: 16px 0 0;
+        font-size: 18px;
+      }
+
+      .proof-note {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .proof-card {
+        min-height: 270px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 10px 24px rgba(23, 32, 27, 0.05);
+      }
+
+      .proof-number {
+        margin: 0;
+        color: var(--green-dark);
+        font-size: clamp(38px, 4vw, 52px);
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+
+      .proof-label {
+        margin: 8px 0 14px;
+        color: var(--ink);
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .proof-card p:not(.proof-number):not(.proof-label) {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .proof-card a {
+        display: inline-block;
+        margin-top: 14px;
+        font-size: 14px;
+      }
+
       .pricing-inner {
         width: min(1080px, 100%);
         margin: 0 auto;
@@ -1028,6 +1114,15 @@
           align-items: start;
         }
 
+        .proof-header,
+        .proof-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .proof-card {
+          min-height: auto;
+        }
+
         .week-grid {
           grid-template-columns: 1fr;
         }
@@ -1255,6 +1350,62 @@
               A small weekend check-in turns vague intentions into a plan that is easier to follow.
             </p>
             <p class="sample-message">"Pick your workout days now. Future you does not get to wing it."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-labelledby="proof-title">
+      <div class="proof-inner">
+        <div class="proof-header">
+          <div>
+            <p class="eyebrow">Built on behavior-change research</p>
+            <h2 id="proof-title">Your goal is more likely to happen when it stays in the conversation.</h2>
+            <p class="proof-intro">
+              Fit Txt turns your plan into timely, two-way check-ins. The research does not promise
+              identical results for every person, but it makes a clear case for pairing goals with
+              reminders, follow-up, and support.
+            </p>
+          </div>
+          <p class="proof-note">Research findings describe averages across groups, not a guarantee of individual results.</p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card">
+            <p class="proof-number">59</p>
+            <p class="proof-label">studies examined text-based physical-activity support</p>
+            <p>
+              A systematic review covering 8,742 people found that text-message programs can help
+              promote physical activity.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/31759805/" target="_blank" rel="noreferrer">Read the study</a>
+          </article>
+          <article class="proof-card">
+            <p class="proof-number">13</p>
+            <p class="proof-label">controlled studies measured actual step counts</p>
+            <p>
+              Across 1,346 participants, text-message groups recorded significantly higher
+              post-program daily steps than comparison groups.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/31759805/" target="_blank" rel="noreferrer">See the results</a>
+          </article>
+          <article class="proof-card">
+            <p class="proof-number">+926</p>
+            <p class="proof-label">daily steps when tracking was paired with added support</p>
+            <p>
+              A separate review of 75 studies found a modest, sustained step-count advantage when
+              people had more than self-monitoring alone.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/36396151/" target="_blank" rel="noreferrer">Read the meta-analysis</a>
+          </article>
+          <article class="proof-card">
+            <p class="proof-number">$29</p>
+            <p class="proof-label">per month for Fit Txt early access</p>
+            <p>
+              That is 61–81% less than a single typical $75–$150 one-hour private health-coaching
+              session—while keeping accountability close by all month.
+            </p>
+            <a href="https://nbhwc.org/wp-content/uploads/2026/01/NBHWC-Annual-Survey-Report-2025.pdf" target="_blank" rel="noreferrer">View coaching-rate data</a>
           </article>
         </div>
       </div>

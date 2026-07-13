@@ -328,6 +328,55 @@ permalink: /how-it-works/
         margin-top: 0;
       }
 
+      .research-box {
+        margin: 34px 0 0;
+        padding: 24px;
+        border: 1px solid #cbe6d7;
+        border-radius: 8px;
+        background: #e8f4ee;
+      }
+
+      .research-box h3 {
+        margin-top: 0;
+      }
+
+      .research-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .research-stat {
+        padding: 16px;
+        border-radius: 8px;
+        background: var(--surface);
+      }
+
+      .research-stat strong {
+        display: block;
+        color: var(--green-dark);
+        font-size: 34px;
+        line-height: 1;
+      }
+
+      .research-stat span {
+        display: block;
+        margin-top: 7px;
+        color: var(--ink);
+        font-weight: 800;
+        line-height: 1.35;
+      }
+
+      .research-box .research-detail {
+        margin: 18px 0 0;
+      }
+
+      .research-box .research-source {
+        margin: 10px 0 0;
+        font-size: 14px;
+      }
+
       .footer {
         padding: 22px clamp(18px, 5vw, 64px);
         color: var(--muted);
@@ -382,6 +431,10 @@ permalink: /how-it-works/
         .week-day {
           grid-template-columns: 1fr;
           gap: 8px;
+        }
+
+        .research-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -464,6 +517,46 @@ permalink: /how-it-works/
             </div>
           </section>
         </div>
+
+        <section class="research-box" aria-labelledby="research-title">
+          <p class="eyebrow">Why text-based accountability</p>
+          <h3 id="research-title">The goal is not another notification. It is follow-through.</h3>
+          <p>
+            Fit Txt is designed around a simple idea: make the next healthy action easier to
+            remember, answer for, and restart. Research on text-message physical-activity
+            programs supports that approach.
+          </p>
+          <div class="research-grid">
+            <div class="research-stat">
+              <strong>59</strong>
+              <span>studies reviewed, covering 8,742 people</span>
+            </div>
+            <div class="research-stat">
+              <strong>13</strong>
+              <span>controlled studies with objective step-count data</span>
+            </div>
+            <div class="research-stat">
+              <strong>1,346</strong>
+              <span>participants in that step-count analysis</span>
+            </div>
+          </div>
+          <p class="research-detail">
+            In those controlled studies, people receiving text-message interventions had
+            significantly higher objectively measured daily steps after the program than people in
+            comparison groups. The reported effect was small to moderate—not a magic multiplier,
+            but a meaningful lift from a simple, scalable form of support.
+          </p>
+          <p>
+            In a separate review of 75 physical-activity studies, pairing self-monitoring with
+            added support was associated with <strong>926 more daily steps</strong> at the end of
+            the intervention than self-monitoring alone.
+          </p>
+          <p class="research-source">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/31759805/" target="_blank" rel="noreferrer">Read the systematic review and meta-analysis</a>.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/36396151/" target="_blank" rel="noreferrer">Read the self-monitoring and support review</a>.
+            Research describes averages across groups; individual results vary.
+          </p>
+        </section>
 
         <section class="sample-week" aria-labelledby="sample-week-title">
           <h3 id="sample-week-title">Sample Week with Fit Txt</h3>
