@@ -1,0 +1,330 @@
+---
+permalink: /portal/
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manage your Fit Txt account, see your progress, and update your coaching preferences.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>My Fit Txt</title>
+    <link rel="canonical" href="https://fittxt.com/portal">
+    <meta name="fittxt-api-base" content="https://admin.fittxt.com">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://admin.fittxt.com/portal.css">
+    <script src="https://admin.fittxt.com/portal.js" defer></script>
+  </head>
+  <body>
+    <main id="loginView" class="portal-login-shell">
+      <section class="portal-login-card" aria-labelledby="loginTitle">
+        <a class="portal-logo" href="https://www.fittxt.com" aria-label="Fit Txt home">
+          <img src="/fit-txt-logo.svg" alt="Fit Txt">
+        </a>
+        <p class="eyebrow">Your account</p>
+        <h1 id="loginTitle">See how far you’ve come.</h1>
+        <p class="login-intro">Sign in with the mobile number connected to Fit Txt. We’ll text you a one-time code.</p>
+
+        <form id="phoneLoginForm" class="portal-form">
+          <label for="loginPhone">Mobile number</label>
+          <input id="loginPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" required>
+          <button class="button button-primary" type="submit">Text me a code</button>
+        </form>
+
+        <form id="codeLoginForm" class="portal-form hidden">
+          <label for="loginCode">6-digit verification code</label>
+          <input id="loginCode" name="code" type="text" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" required>
+          <button class="button button-primary" type="submit">Open my portal</button>
+          <button id="useDifferentPhone" class="button button-text" type="button">Use a different number</button>
+        </form>
+        <p id="loginMessage" class="form-message" role="status" aria-live="polite"></p>
+        <p class="support-note">Need a hand? Email <a href="mailto:help@fittxt.com">help@fittxt.com</a>.</p>
+      </section>
+    </main>
+
+    <div id="appView" class="portal-app hidden">
+      <header class="portal-header">
+        <a class="portal-logo portal-logo-small" href="https://www.fittxt.com" aria-label="Fit Txt home">
+          <img src="/fit-txt-logo.svg" alt="Fit Txt">
+        </a>
+        <nav aria-label="Portal navigation">
+          <a href="#progress">Progress</a>
+          <a href="#profile">Profile</a>
+          <a href="#account">Account</a>
+        </nav>
+        <button id="logoutButton" class="button button-quiet" type="button">Sign out</button>
+      </header>
+
+      <main class="portal-main">
+        <section class="welcome-card" aria-labelledby="welcomeTitle">
+          <div>
+            <p class="eyebrow">My Fit Txt</p>
+            <h1 id="welcomeTitle">Welcome back.</h1>
+            <p id="welcomeSubhead">Your progress is bigger than any single day. Here’s the whole picture.</p>
+          </div>
+          <div id="planBadge" class="plan-badge"></div>
+        </section>
+
+        <section id="progress" aria-labelledby="progressTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Momentum</p>
+              <h2 id="progressTitle">Your progress at a glance</h2>
+            </div>
+          </div>
+          <div class="metric-grid">
+            <article class="metric-card metric-streak">
+              <div class="streak-orbit" aria-hidden="true"><span id="streakNumber">0</span></div>
+              <div>
+                <p class="metric-label">Current streak</p>
+                <p class="metric-copy"><strong id="streakDays">0 days</strong> of showing up</p>
+                <p id="bestStreak" class="metric-detail">Best: 0 days</p>
+              </div>
+            </article>
+            <article class="metric-card">
+              <span class="metric-icon" aria-hidden="true">↗</span>
+              <p id="messageCount" class="metric-value">0</p>
+              <p class="metric-label">Messages exchanged</p>
+              <p id="messageSplit" class="metric-detail">Your full Fit Txt conversation</p>
+            </article>
+            <article class="metric-card">
+              <span class="metric-icon metric-icon-gold" aria-hidden="true">✦</span>
+              <p id="activeDays" class="metric-value">0</p>
+              <p class="metric-label">Active days</p>
+              <p id="journeySince" class="metric-detail">Your consistency in motion</p>
+            </article>
+          </div>
+
+          <article class="recap-card">
+            <div class="recap-heading">
+              <div>
+                <p class="eyebrow">Your story so far</p>
+                <h3>Progress recap</h3>
+              </div>
+              <span class="ai-badge">AI summarized</span>
+            </div>
+            <div id="recapLoading" class="recap-loading">
+              <span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>
+              Building your start-to-finish recap…
+            </div>
+            <div id="recapContent" class="hidden">
+              <div id="recapSummary" class="recap-summary"></div>
+              <ul id="recapHighlights" class="highlight-list"></ul>
+              <div class="next-focus"><span>Next focus</span><p id="recapNextFocus"></p></div>
+              <p id="recapGenerated" class="recap-generated"></p>
+            </div>
+          </article>
+        </section>
+
+        <section id="account" aria-labelledby="accountTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Membership</p>
+              <h2 id="accountTitle">Account and billing</h2>
+            </div>
+          </div>
+          <div class="account-grid">
+            <article id="billingCard" class="content-card">
+              <div class="card-title-row">
+                <div>
+                  <p class="card-kicker">Billing</p>
+                  <h3 id="billingPlan">Fit Txt plan</h3>
+                </div>
+                <span id="billingStatus" class="status-pill"></span>
+              </div>
+              <p id="billingDescription" class="card-description"></p>
+              <dl id="paymentDetails" class="detail-list"></dl>
+              <button id="billingPortalButton" class="button button-secondary hidden" type="button">Manage billing in Stripe</button>
+            </article>
+
+            <article id="coachCard" class="content-card">
+              <div class="card-title-row">
+                <div>
+                  <p class="card-kicker">Coaching connection</p>
+                  <h3 id="coachName">Fit Txt</h3>
+                </div>
+                <span id="coachType" class="status-pill status-pill-neutral">Independent</span>
+              </div>
+              <p id="coachDescription" class="card-description">Your account is not linked to a human coach or studio.</p>
+              <button id="unlinkCoachButton" class="button button-secondary hidden" type="button">Unlink this coach</button>
+            </article>
+          </div>
+        </section>
+
+        <section id="profile" aria-labelledby="profileTitle">
+          <div class="section-heading section-heading-profile">
+            <div>
+              <p class="eyebrow">Make it yours</p>
+              <h2 id="profileTitle">Profile and coaching preferences</h2>
+            </div>
+            <p>These details help Fit Txt make each check-in more useful.</p>
+          </div>
+          <form id="profileForm" class="profile-card">
+            <fieldset>
+              <legend>Basics</legend>
+              <div class="field-grid field-grid-three">
+                <label>Name<input name="name" autocomplete="name" maxlength="120"></label>
+                <label>Email<input name="email" type="email" autocomplete="email" maxlength="254"></label>
+                <label>Phone
+                  <span class="phone-edit-row"><input name="phone" type="tel" disabled><button id="changePhoneButton" class="button button-inline" type="button">Change</button></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Goals and plan</legend>
+              <div class="field-grid field-grid-two">
+                <label>Current weight<input name="currentWeight" maxlength="80" placeholder="Example: 185 lb"></label>
+                <label>Target weight<input name="targetWeight" maxlength="80" placeholder="Example: 170 lb"></label>
+                <label>Diet plan<textarea name="dietPlan" maxlength="2000" placeholder="What eating approach are you following?"></textarea></label>
+                <label>Exercise plan<textarea name="exercisePlan" maxlength="2000" placeholder="What movement or training plan are you following?"></textarea></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Coaching style</legend>
+              <div class="field-grid field-grid-three">
+                <label>Motivation style
+                  <select name="motivationStyle">
+                    <option>Direct coach</option><option>Supportive coach</option><option>Tough love</option><option>Data-driven</option>
+                  </select>
+                </label>
+                <label>Push level
+                  <select name="pushLevel">
+                    <option>Gentle</option><option>Steady</option><option>Firm</option><option>High accountability</option>
+                  </select>
+                </label>
+                <label>Preferred human coach gender
+                  <select name="preferredCoachGender">
+                    <option value="">No preference</option><option value="female">Female</option><option value="male">Male</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Contact preferences</legend>
+              <div class="field-grid field-grid-three">
+                <label>Time zone
+                  <select name="timeZone">
+                    <option value="">Not set</option>
+                    <option value="America/New_York">Eastern</option>
+                    <option value="America/Chicago">Central</option>
+                    <option value="America/Denver">Mountain</option>
+                    <option value="America/Phoenix">Arizona</option>
+                    <option value="America/Los_Angeles">Pacific</option>
+                    <option value="America/Anchorage">Alaska</option>
+                    <option value="Pacific/Honolulu">Hawaii</option>
+                  </select>
+                </label>
+                <label>Preferred start time<input name="contactWindowStart" type="time"></label>
+                <label>Preferred end time<input name="contactWindowEnd" type="time"></label>
+              </div>
+              <div>
+                <span class="group-label">Days you want check-ins</span>
+                <div class="day-picker">
+                  <label><input type="checkbox" name="contactDays" value="mon"><span>Mon</span></label>
+                  <label><input type="checkbox" name="contactDays" value="tue"><span>Tue</span></label>
+                  <label><input type="checkbox" name="contactDays" value="wed"><span>Wed</span></label>
+                  <label><input type="checkbox" name="contactDays" value="thu"><span>Thu</span></label>
+                  <label><input type="checkbox" name="contactDays" value="fri"><span>Fri</span></label>
+                  <label><input type="checkbox" name="contactDays" value="sat"><span>Sat</span></label>
+                  <label><input type="checkbox" name="contactDays" value="sun"><span>Sun</span></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Health context</legend>
+              <p class="field-help">Only share what you’re comfortable sharing. Fit Txt is not a medical provider.</p>
+              <div class="field-grid field-grid-two">
+                <label>Restrictions<textarea name="restrictions" maxlength="2000" placeholder="Injuries, food restrictions, accessibility needs, or other limits"></textarea></label>
+                <label>Medical notes<textarea name="medicalNotes" maxlength="2000" placeholder="Relevant context you want your coach to remember"></textarea></label>
+              </div>
+            </fieldset>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Save profile</button>
+              <p id="profileMessage" class="form-message" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </section>
+
+        <section class="action-grid" aria-label="Invite and support">
+          <article class="invite-card">
+            <p class="eyebrow">Better together</p>
+            <h2>Invite a friend</h2>
+            <p>Know someone who could use steady, judgment-free accountability? Send them a one-time Fit Txt invite.</p>
+            <form id="inviteForm" class="portal-form portal-form-inline">
+              <div class="field-grid field-grid-two">
+                <label>Friend’s name <input name="friendName" maxlength="80" autocomplete="off"></label>
+                <label>Friend’s mobile number <input name="phone" type="tel" inputmode="tel" autocomplete="off" required></label>
+              </div>
+              <label class="consent-check"><input name="permissionConfirmed" type="checkbox" required> <span>My friend agreed to receive this one-time invite.</span></label>
+              <button class="button button-inverse" type="submit">Send invite</button>
+              <p id="inviteMessage" class="form-message form-message-light" role="status"></p>
+            </form>
+          </article>
+          <article class="help-card">
+            <span class="help-icon" aria-hidden="true">?</span>
+            <p class="eyebrow">Real help</p>
+            <h2>Questions? We’re here.</h2>
+            <p>For billing, account, coaching, or technical help, email our team anytime.</p>
+            <a class="button button-secondary" href="mailto:help@fittxt.com">Email help@fittxt.com</a>
+          </article>
+        </section>
+
+        <section class="danger-zone" aria-labelledby="dangerTitle">
+          <div>
+            <p class="eyebrow eyebrow-danger">Permanent action</p>
+            <h2 id="dangerTitle">Delete my account</h2>
+            <p>This permanently removes your Fit Txt account and conversation history. Any active individual Stripe subscription will be cancelled first.</p>
+          </div>
+          <button id="deleteAccountButton" class="button button-danger" type="button">Delete account</button>
+        </section>
+      </main>
+
+      <footer class="portal-footer">
+        <span>© Fit Txt</span>
+        <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="mailto:help@fittxt.com">Help</a></span>
+      </footer>
+    </div>
+
+    <dialog id="phoneDialog" class="portal-dialog">
+      <form id="phoneChangeForm" method="dialog" class="dialog-card">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+        <p class="eyebrow">Secure change</p>
+        <h2>Change your phone number</h2>
+        <div id="phoneRequestStep">
+          <p>We’ll text a verification code to the new number before updating your account.</p>
+          <label>New mobile number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required></label>
+          <label class="consent-check consent-check-dark"><input name="consentAccepted" type="checkbox" required> <span>I own this number and agree to receive recurring Fit Txt texts there. Message and data rates may apply. Reply STOP to unsubscribe.</span></label>
+          <button class="button button-primary" type="submit">Text the new number</button>
+        </div>
+        <div id="phoneVerifyStep" class="hidden">
+          <p>Enter the 6-digit code sent to your new number.</p>
+          <label>Verification code<input name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6"></label>
+          <button id="verifyPhoneButton" class="button button-primary" type="button">Verify and update phone</button>
+        </div>
+        <p id="phoneMessage" class="form-message" role="status"></p>
+      </form>
+    </dialog>
+
+    <dialog id="confirmDialog" class="portal-dialog">
+      <div class="dialog-card">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+        <p id="confirmEyebrow" class="eyebrow">Please confirm</p>
+        <h2 id="confirmTitle">Are you sure?</h2>
+        <p id="confirmCopy"></p>
+        <div id="deleteConfirmationField" class="hidden">
+          <label>Type DELETE to confirm<input id="deleteConfirmation" autocomplete="off"></label>
+        </div>
+        <div class="dialog-actions">
+          <button class="button button-quiet" type="button" data-close-dialog>Keep my account</button>
+          <button id="confirmActionButton" class="button button-danger" type="button">Confirm</button>
+        </div>
+        <p id="confirmMessage" class="form-message" role="status"></p>
+      </div>
+    </dialog>
+  </body>
+</html>

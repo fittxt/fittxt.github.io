@@ -173,6 +173,27 @@ permalink: /how-it-works/
         text-decoration: none;
       }
 
+      .nav .nav-login {
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 7px 17px;
+        background: var(--green);
+        color: #fff;
+        font-weight: 850;
+        box-shadow: 0 7px 18px rgba(47, 125, 89, 0.2);
+        transition: transform 150ms ease, background 150ms ease, box-shadow 150ms ease;
+      }
+
+      .nav .nav-login:hover,
+      .nav .nav-login:focus-visible {
+        background: var(--green-dark);
+        box-shadow: 0 9px 22px rgba(47, 125, 89, 0.26);
+        transform: translateY(-1px);
+      }
+
       .doc-main {
         background: var(--soft);
         border-bottom: 1px solid var(--line);
@@ -422,6 +443,12 @@ permalink: /how-it-works/
         .nav {
           width: 100%;
           justify-content: center;
+          align-items: center;
+          gap: 10px 14px;
+        }
+
+        .nav a:not(.nav-login) {
+          font-size: 14px;
         }
 
         .step {
@@ -444,6 +471,7 @@ permalink: /how-it-works/
       <div class="header-inner">
         <a class="logo" href="/" aria-label="Fit Txt home"><img src="/fit-txt-logo.svg" alt="" width="154" height="40" /></a>
         <nav class="nav" aria-label="Site links">
+          <a class="nav-login" href="/portal">Login</a>
           <a href="/#signup">Sign Up</a>
           <a href="/how-it-works">How It Works</a>
           <a href="/coaches">For Coaches</a>
